@@ -102,3 +102,27 @@
 .interactive-hover-button.btn-outline:hover {
   color: #ffffff;
 }
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .interactive-hover-button {
+    padding: 0.75rem 1.25rem;
+    min-height: 48px; /* better touch target */
+  }
+
+  .interactive-hover-button .ihb-text,
+  .interactive-hover-button .ihb-text-hover {
+    font-size: 1rem;
+    gap: 0.4rem;
+  }
+
+  /* On mobile, reduce animation complexity for performance */
+  .interactive-hover-button:active .ihb-bg {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transform: scale(1);
+  }
+}

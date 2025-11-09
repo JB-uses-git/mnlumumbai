@@ -51,6 +51,22 @@
 
 /* small responsive tweak so words don't overflow */
 @media (max-width: 768px){
-  .ah-words{ height: 1em }
-  .ah-word{ line-height: 1em }
+  .animated-hero {
+    font-size: 1.25rem;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+  }
+
+  .ah-prefix {
+    font-size: 1.25rem;
+  }
+
+  .ah-words { 
+    height: 1.3em;
+  }
+  
+  .ah-word { 
+    height: 1.3em;
+    line-height: 1.3em;
+  }
 }
