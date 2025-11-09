@@ -1,0 +1,219 @@
+.tubelight-navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* solid header color (mix of white and theme color) */
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--header-border);
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-logo-img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.navbar-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-brand-text h2 {
+  font-size: 1.8rem;
+  background: linear-gradient(135deg, var(--accent), var(--gray));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  line-height: 1;
+}
+
+.navbar-tagline {
+  font-size: 0.75rem;
+  color: var(--gray);
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
+.tubelight-navbar {
+  display: flex;
+  align-items: center;
+}
+
+.tubelight-navbar-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  /* make the pill slightly lighter than the header, using a translucent white */
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  padding: 0.25rem;
+  border-radius: 9999px;
+  box-shadow: var(--shadow);
+}
+
+.tubelight-nav-item {
+  position: relative;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  color: var(--dark);
+  opacity: 0.7;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.tubelight-nav-item:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.tubelight-nav-item.active {
+  background: rgba(11, 102, 195, 0.05);
+  color: var(--accent);
+  opacity: 1;
+}
+
+.nav-item-icon {
+  display: none;
+}
+
+.tubelight-lamp {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  background: rgba(11, 102, 195, 0.05);
+  border-radius: 9999px;
+  z-index: -1;
+  animation: lampFadeIn 0.3s ease;
+}
+
+.lamp-light {
+  position: absolute;
+  top: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2rem;
+  height: 0.25rem;
+  background: var(--accent);
+  border-radius: 9999px 9999px 0 0;
+}
+
+.glow {
+  position: absolute;
+  border-radius: 9999px;
+  background: rgba(11, 102, 195, 0.2);
+  filter: blur(8px);
+}
+
+.glow-1 {
+  width: 3rem;
+  height: 1.5rem;
+  top: -0.5rem;
+  left: -0.5rem;
+}
+
+.glow-2 {
+  width: 2rem;
+  height: 1.5rem;
+  top: -0.25rem;
+  left: 0;
+}
+
+.glow-3 {
+  width: 1rem;
+  height: 1rem;
+  top: 0;
+  left: 0.5rem;
+  filter: blur(4px);
+}
+
+@keyframes lampFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .tubelight-navbar-wrapper {
+    padding: 0.75rem 1rem;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .navbar-brand {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .navbar-logo-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navbar-brand-text h2 {
+    font-size: 1.25rem;
+  }
+
+  .navbar-tagline {
+    font-size: 0.65rem;
+  }
+
+  .tubelight-navbar {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .tubelight-navbar-container {
+    gap: 0.5rem;
+    padding: 0.25rem;
+    width: max-content;
+  }
+
+  .tubelight-nav-item {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .nav-item-text {
+    display: none;
+  }
+
+  .nav-item-icon {
+    display: inline-flex;
+  }
+
+  .lamp-light {
+    top: auto;
+    bottom: -0.5rem;
+    border-radius: 0 0 9999px 9999px;
+  }
+}

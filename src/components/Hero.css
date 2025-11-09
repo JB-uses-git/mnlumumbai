@@ -3,9 +3,9 @@
   display: flex;
   align-items: center;
   position: relative;
-  background: #000000;
+  background: var(--page-bg);
   overflow: hidden;
-  /* leave extra space at the top so the absolute navbar doesn't cover hero content */
+  /* Adjust padding for the new tubelight navbar which sits at the top */
   padding-top: 120px;
 }
 
@@ -16,8 +16,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-  opacity: 0.5;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,0,0,0.04)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.35;
 }
 
 .hero-overlay {
@@ -107,9 +107,9 @@
 }
 
 @media (max-width: 768px) {
-  /* on smaller screens the navbar is shorter; reduce top padding so hero isn't pushed too far down */
+  /* on smaller screens the navbar expands vertically; add more top padding */
   .hero {
-    padding-top: 90px;
+    padding-top: 140px;
     padding-bottom: 60px;
   }
 

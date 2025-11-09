@@ -5,20 +5,39 @@
 }
 
 :root {
-  --primary: #000000;
-  --primary-dark: #0a0a0a;
-  --secondary: #1a1a1a;
-  --accent: #ffffff;
-  --dark: #ffffff;
-  --light: #0a0a0a;
-  --gray: #a3a3a3;
-  --white: #000000;
-  --bg-dark: #000000;
-  --bg-secondary: #111111;
-  --bg-card: #1a1a1a;
-  --border: #2a2a2a;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.7);
+  /* Light / off-white theme variables (base color updated to #fdf0d5) */
+  --primary: #fdf0d5; /* off-white page background (requested) */
+  --primary-dark: #efe0c0;
+  --secondary: #f7e9d8;
+  --accent: #0b66c3; /* deep blue accent (kept) */
+  --dark: #0f172a; /* primary text color (near-black) */
+  --light: #ffffff;
+  --gray: #6b7280;
+  --white: #ffffff;
+  --bg-dark: #fdf0d5; /* page background (off-white) */
+  --bg-secondary: #f7e9d8;
+  --bg-card: #ffffff;
+  --border: #efe7dd;
+  /* header-specific colors: a solid mix of white and the main theme color (#fdf0d5) */
+  --header-bg: #fef8ea; /* mix of white and #fdf0d5 */
+  --header-border: #efe7dd;
+  /* keep vars compatible with previous gradient usage (set both to same color for a solid) */
+  --header-bg-start: var(--header-bg);
+  --header-bg-end: var(--header-bg);
+  /* Header-specific colors: a mix of white and the main theme color (#fdf0d5) */
+  --header-bg-start: #ffffff;
+  --header-bg-end: #fdf0d5;
+  --header-border: rgba(222, 197, 150, 0.6);
+  /* header-specific variables */
+  --header-bg: rgba(253,240,213,0.96); /* warm off-white derived from main color */
+  --header-border: rgba(0,0,0,0.06);
+  /* Header-specific background (slightly closer to white but in the same warm tone) */
+  --header-bg: #fffaf0;
+  --header-border: #efe6d0;
+  --shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 12px 40px rgba(15, 23, 42, 0.08);
+  /* unified page background (use this for all page sections) */
+  --page-bg: var(--bg-dark);
 }
 
 body {

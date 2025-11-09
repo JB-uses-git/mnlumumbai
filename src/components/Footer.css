@@ -1,6 +1,6 @@
 .footer {
-  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-secondary) 100%);
-  color: var(--accent);
+  background: var(--page-bg);
+  color: var(--dark);
   padding: 4rem 0 2rem;
   border-top: 1px solid var(--border);
 }
@@ -38,7 +38,7 @@
 }
 
 .footer-description {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(15, 23, 42, 0.85);
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
@@ -51,12 +51,12 @@
 .social-link {
   width: 40px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(15, 23, 42, 0.04);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent);
+  color: var(--dark);
   font-size: 1.125rem;
   transition: all 0.3s ease;
   border: 1px solid var(--border);
@@ -97,8 +97,8 @@
   padding: 12px 16px;
   border: 2px solid var(--border);
   border-radius: 8px;
-  background: var(--bg-secondary);
-  color: var(--accent);
+  background: var(--bg-card);
+  color: var(--dark);
   font-family: inherit;
   font-size: 0.95rem;
 }
@@ -120,7 +120,7 @@
 
 .footer-bottom {
   text-align: left;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(15, 23, 42, 0.6);
 }
 
 .footer-bottom p {

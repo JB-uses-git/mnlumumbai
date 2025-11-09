@@ -1,55 +1,54 @@
-import React, { useState, useEffect } from 'react'
-import { FaBars, FaTimes } from 'react-icons/fa'
-import './Navbar.css'
-import InteractiveHoverButton from './ui/interactive-hover-button'
+import React from 'react'
+import { FaHome, FaInfoCircle, FaBook, FaCalendarAlt, FaImages, FaEnvelope, FaUserGraduate } from 'react-icons/fa'
+import TubelightNavbar from './ui/TubelightNavbar'
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   const scrollToSection = (id) => {
     const element = document.getElementById(id)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
-      setIsMobileMenuOpen(false)
     }
   }
 
-  return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="container nav-container">
-        <div className="nav-logo">
-          <img src="/calstar-logo.svg" alt="CALSTAR Logo" className="nav-logo-img" />
-          <div>
-            <h2>MNLU Mumbai</h2>
-            <span className="logo-tagline">Excellence in Legal Education</span>
-          </div>
-        </div>
+  const navItems = [
+    {
+      name: 'Home',
+      icon: FaHome,
+      onClick: () => scrollToSection('home')
+    },
+    {
+      name: 'About',
+      icon: FaInfoCircle,
+      onClick: () => scrollToSection('about')
+    },
+    {
+      name: 'Programs',
+      icon: FaBook,
+      onClick: () => scrollToSection('programs')
+    },
+    {
+      name: 'Events',
+      icon: FaCalendarAlt,
+      onClick: () => scrollToSection('events')
+    },
+    {
+      name: 'Gallery',
+      icon: FaImages,
+      onClick: () => scrollToSection('gallery')
+    },
+    {
+      name: 'Contact',
+      icon: FaEnvelope,
+      onClick: () => scrollToSection('contact')
+    },
+    {
+      name: 'Apply Now',
+      icon: FaUserGraduate,
+      onClick: () => scrollToSection('contact')
+    }
+  ]
 
-        <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
-          <a onClick={() => scrollToSection('home')}>Home</a>
-          <a onClick={() => scrollToSection('about')}>About</a>
-          <a onClick={() => scrollToSection('programs')}>Programs</a>
-          <a onClick={() => scrollToSection('events')}>Events</a>
-          <a onClick={() => scrollToSection('gallery')}>Gallery</a>
-          <a onClick={() => scrollToSection('contact')}>Contact</a>
-          <InteractiveHoverButton className="btn btn-primary nav-cta">Apply Now</InteractiveHoverButton>
-        </div>
-
-        <div className="mobile-menu-icon" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
-        </div>
-      </div>
-    </nav>
-  )
+  return <TubelightNavbar items={navItems} />
 }
 
 export default Navbar

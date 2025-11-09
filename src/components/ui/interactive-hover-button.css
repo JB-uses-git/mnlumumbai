@@ -80,27 +80,27 @@
 }
 
 .interactive-hover-button.btn-primary .ihb-bg {
-  background: #000000;
+  background: var(--dark);
 }
 
 .interactive-hover-button.btn-primary:hover {
-  color: #ffffff;
+  color: var(--white);
 }
 
 .interactive-hover-button.btn-secondary .ihb-bg {
-  background: #ffffff;
+  background: var(--white);
 }
 
 .interactive-hover-button.btn-secondary:hover {
-  color: #000000;
+  color: var(--dark);
 }
 
 .interactive-hover-button.btn-outline .ihb-bg {
-  background: #000000;
+  background: var(--dark);
 }
 
 .interactive-hover-button.btn-outline:hover {
-  color: #ffffff;
+  color: var(--white);
 }
 
 /* Mobile optimizations */
