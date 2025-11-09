@@ -2,6 +2,7 @@ import React from 'react'
 import { FaGraduationCap, FaArrowRight, FaPlay } from 'react-icons/fa'
 import './Hero.css'
 import InteractiveHoverButton from './ui/interactive-hover-button'
+import AnimatedHero from './ui/AnimatedHero'
 
 const Hero = () => {
   return (
@@ -14,6 +15,10 @@ const Hero = () => {
             Welcome to <br />
             <span className="gradient-text">MNLU Mumbai</span>
           </h1>
+          {/* Animated phrase inserted under the title */}
+          <div style={{ marginTop: '8px' }}>
+            <AnimatedHero words={["Legal Studies", "Training", "Research"]} interval={2200} />
+          </div>
           <p className="hero-description">
             Creating Legal Excellence Through Research and Training. 
             Join a community of scholars dedicated to advancing legal discourse 

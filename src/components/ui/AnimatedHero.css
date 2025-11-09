@@ -1,0 +1,56 @@
+.animated-hero{
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-weight: 800;
+  color: var(--dark);
+  font-size: 2rem; /* larger text for prominence */
+}
+
+.ah-prefix{
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.ah-words{
+  display: inline-block;
+  vertical-align: baseline;
+  overflow: hidden;
+  /* give a little extra room for descenders (e.g. g, y, p) so they don't get clipped */
+  height: 1.3em; /* slightly taller than 1em to allow descenders */
+  padding-bottom: 0.05em; /* tiny extra space to avoid tight clipping */
+}
+
+.ah-words-inner{
+  display: block;
+  transition: transform 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform;
+}
+
+.ah-word{
+  display: block;
+  /* match the container height/line-height so descenders are visible */
+  height: 1.3em;
+  line-height: 1.3em;
+  white-space: nowrap;
+  transition: opacity 350ms ease, transform 450ms ease;
+  /* gradient text to match .gradient-text (same appearance as "Mumbai") */
+  background: linear-gradient(135deg, var(--accent), var(--gray));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ah-word[aria-hidden="true"]{
+  opacity: 0;
+}
+
+.ah-word[aria-hidden="false"]{
+  opacity: 1;
+}
+
+/* small responsive tweak so words don't overflow */
+@media (max-width: 768px){
+  .ah-words{ height: 1em }
+  .ah-word{ line-height: 1em }
+}

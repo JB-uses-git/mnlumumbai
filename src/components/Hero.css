@@ -5,7 +5,8 @@
   position: relative;
   background: #000000;
   overflow: hidden;
-  padding-top: 80px;
+  /* leave extra space at the top so the absolute navbar doesn't cover hero content */
+  padding-top: 120px;
 }
 
 .hero::before {
@@ -48,6 +49,9 @@
   font-weight: 600;
   margin-bottom: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
+  /* make sure the badge sits above nearby text when overlays/transforms occur */
+  position: relative;
+  z-index: 2;
 }
 
 .hero-title {
@@ -66,6 +70,8 @@
 .hero-description {
   font-size: 1.25rem;
   line-height: 1.8;
+  /* add a small top gap so the animated phrase / badge don't visually overlap */
+  margin-top: 0.4rem;
   margin-bottom: 2.5rem;
   opacity: 0.95;
 }
@@ -103,6 +109,11 @@
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2.5rem;
+  }
+
+  /* on smaller screens the navbar is shorter; reduce top padding so hero isn't pushed too far down */
+  .hero {
+    padding-top: 90px;
   }
 
   .hero-description {
