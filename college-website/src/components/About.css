@@ -1,0 +1,132 @@
+.about {
+  background: var(--bg-dark);
+}
+
+.about-content {
+  display: grid;
+  /* single column so image sits above the text */
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+  align-items: start;
+}
+
+.about-image {
+  position: relative;
+}
+
+.image-placeholder {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+/* center the image block within the content area */
+.about-image {
+  display: flex;
+  /* center the image only */
+  justify-content: center;
+}
+
+.image-placeholder {
+  /* constrain the visual width and center the placeholder */
+  width: min(900px, 100%);
+  margin: 0 auto;
+}
+
+.image-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(163, 163, 163, 0.1));
+  z-index: 1;
+}
+
+.image-placeholder img {
+  width: 100%;
+  /* slightly shorter than the previous 520px but larger than the original 400px */
+  height: 460px;
+  object-fit: cover;
+  display: block;
+}
+
+.about-text h3 {
+  font-size: 2.4rem;
+  margin: 1.25rem 0 1rem 0;
+  color: var(--dark);
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+.about-text {
+  /* left-align text under the image; match the site's container/gutter */
+  text-align: left;
+  max-width: 900px;
+  margin: 0;
+}
+
+.about-text .btn {
+  display: inline-block;
+  margin: 0.5rem 0 0 0;
+}
+
+.features-grid {
+  margin-top: 4rem;
+}
+
+.feature-card {
+  text-align: left;
+  padding: 2.5rem 1.5rem;
+}
+
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, var(--accent), var(--gray));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--bg-dark);
+}
+
+.feature-card h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
+.feature-card p {
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .image-placeholder img {
+    height: 360px;
+  }
+
+  .about-text h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .image-placeholder img {
+    height: 260px;
+  }
+
+  .about-text h3 {
+    font-size: 1.4rem;
+  }
+}
