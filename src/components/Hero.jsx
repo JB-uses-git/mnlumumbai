@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaGraduationCap, FaArrowRight, FaPlay } from 'react-icons/fa'
+import { FaArrowRight } from 'react-icons/fa'
 import './Hero.css'
 import InteractiveHoverButton from './ui/interactive-hover-button'
 import AnimatedHero from './ui/AnimatedHero'
@@ -27,9 +27,6 @@ const Hero = () => {
           <div className="hero-buttons">
             <InteractiveHoverButton className="btn btn-primary">
               Explore Programs <FaArrowRight />
-            </InteractiveHoverButton>
-            <InteractiveHoverButton className="btn btn-outline">
-              <FaPlay /> Watch Video
             </InteractiveHoverButton>
           </div>
           <div className="hero-stats">
