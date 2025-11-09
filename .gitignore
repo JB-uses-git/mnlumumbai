@@ -32,4 +32,5 @@ pnpm-debug.log*
 .env.development.local
 
 # Optimized images (generated)
-public/images/optimized/
+# Optimized images (generated)
+# public/images/optimized/  <-- kept locally but committed to repo so Vercel can serve them
