@@ -1,4 +1,4 @@
-# MNLU - Modern National Law University Website
+# MNLU Mumbai - Modern National Law University Website
 
 A clean, modern, and responsive college website built with React and Vite.
 
