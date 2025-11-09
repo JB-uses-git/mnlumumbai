@@ -1,0 +1,11 @@
+{
+  "buildCommand": "cd college-website && npm install && npm run build",
+  "outputDirectory": "college-website/dist",
+  "installCommand": "cd college-website && npm install",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
