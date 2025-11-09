@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube, FaHeart } from 'react-icons/fa'
 import './Footer.css'
+import InteractiveHoverButton from './ui/interactive-hover-button'
 
 const Footer = () => {
   return (
@@ -60,7 +61,7 @@ const Footer = () => {
             <p>Subscribe to get updates on latest events and news</p>
             <form className="newsletter-form">
               <input type="email" placeholder="Enter your email" />
-              <button type="submit" className="btn btn-primary">Subscribe</button>
+              <InteractiveHoverButton type="submit" className="btn btn-primary">Subscribe</InteractiveHoverButton>
             </form>
           </div>
         </div>

@@ -1,0 +1,104 @@
+.interactive-hover-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  background: transparent;
+}
+
+.interactive-hover-button .ihb-text {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transform: translateX(0);
+  transition: all 0.35s ease;
+  width: 100%;
+  justify-content: center;
+}
+
+.interactive-hover-button .ihb-text-hover {
+  position: absolute;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transform: translateX(-110%);
+  opacity: 0;
+  transition: all 0.35s ease;
+  width: 100%;
+  justify-content: center;
+}
+
+.interactive-hover-button .ihb-bg {
+  /* Hidden in normal state: remove the small dot */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  background: currentColor;
+  border-radius: 6px;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.interactive-hover-button:hover .ihb-text {
+  transform: translateX(120%);
+  opacity: 0;
+}
+
+.interactive-hover-button:hover .ihb-text-hover {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.interactive-hover-button:hover .ihb-bg {
+  /* Expand from center to full button background on hover */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transform: scale(1);
+  border-radius: 6px;
+}
+
+/* Preserve existing .btn styles */
+.interactive-hover-button.btn {
+  padding: 0.6rem 1rem;
+}
+
+.interactive-hover-button.btn-primary .ihb-bg {
+  background: #000000;
+}
+
+.interactive-hover-button.btn-primary:hover {
+  color: #ffffff;
+}
+
+.interactive-hover-button.btn-secondary .ihb-bg {
+  background: #ffffff;
+}
+
+.interactive-hover-button.btn-secondary:hover {
+  color: #000000;
+}
+
+.interactive-hover-button.btn-outline .ihb-bg {
+  background: #000000;
+}
+
+.interactive-hover-button.btn-outline:hover {
+  color: #ffffff;
+}

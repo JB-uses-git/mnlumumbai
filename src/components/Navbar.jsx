@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import './Navbar.css'
+import InteractiveHoverButton from './ui/interactive-hover-button'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -40,7 +41,7 @@ const Navbar = () => {
           <a onClick={() => scrollToSection('events')}>Events</a>
           <a onClick={() => scrollToSection('gallery')}>Gallery</a>
           <a onClick={() => scrollToSection('contact')}>Contact</a>
-          <button className="btn btn-primary nav-cta">Apply Now</button>
+          <InteractiveHoverButton className="btn btn-primary nav-cta">Apply Now</InteractiveHoverButton>
         </div>
 
         <div className="mobile-menu-icon" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>

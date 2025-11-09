@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaBook, FaCertificate, FaUserGraduate, FaBriefcase } from 'react-icons/fa'
 import './Programs.css'
+import InteractiveHoverButton from './ui/interactive-hover-button'
 
 const Programs = () => {
   const programs = [
@@ -59,7 +60,7 @@ const Programs = () => {
                   <span key={idx} className="highlight-tag">{highlight}</span>
                 ))}
               </div>
-              <button className="btn btn-secondary">View Details</button>
+              <InteractiveHoverButton className="btn btn-secondary">View Details</InteractiveHoverButton>
             </div>
           ))}
         </div>
@@ -67,7 +68,7 @@ const Programs = () => {
         <div className="programs-cta">
           <h3>Ready to Start Your Legal Journey?</h3>
           <p>Join MNLU Mumbai and be part of creating legal excellence through research and training</p>
-          <button className="btn btn-primary">Apply for Admission</button>
+          <InteractiveHoverButton className="btn btn-primary">Apply for Admission</InteractiveHoverButton>
         </div>
       </div>
     </section>

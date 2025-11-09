@@ -1,5 +1,6 @@
 import React from 'react'
 import './Gallery.css'
+import InteractiveHoverButton from './ui/interactive-hover-button'
 
 const Gallery = () => {
   const images = [
@@ -56,7 +57,7 @@ const Gallery = () => {
         </div>
 
         <div className="gallery-footer">
-          <button className="btn btn-primary">View Full Gallery</button>
+          <InteractiveHoverButton className="btn btn-primary">View Full Gallery</InteractiveHoverButton>
         </div>
       </div>
     </section>

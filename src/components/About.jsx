@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaAward, FaUsers, FaGlobe, FaLightbulb } from 'react-icons/fa'
 import './About.css'
+import InteractiveHoverButton from './ui/interactive-hover-button'
 
 const About = () => {
   const features = [
@@ -59,7 +60,7 @@ const About = () => {
               to be the beacon of light for all the present and future endeavours in the 
               field of law.
             </p>
-            <button className="btn btn-primary">Learn More About Us</button>
+            <InteractiveHoverButton className="btn btn-primary">Learn More About Us</InteractiveHoverButton>
           </div>
         </div>
 

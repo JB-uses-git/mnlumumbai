@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaCalendar, FaMapMarkerAlt, FaClock, FaArrowRight } from 'react-icons/fa'
 import './Events.css'
+import InteractiveHoverButton from './ui/interactive-hover-button'
 
 const Events = () => {
   const events = [
@@ -99,15 +100,15 @@ const Events = () => {
                   <span>{event.location}</span>
                 </div>
               </div>
-              <button className="btn btn-secondary event-btn">
+              <InteractiveHoverButton className="btn btn-secondary event-btn">
                 Register Now <FaArrowRight />
-              </button>
+              </InteractiveHoverButton>
             </div>
           ))}
         </div>
 
         <div className="events-footer">
-          <button className="btn btn-primary">View All Events</button>
+          <InteractiveHoverButton className="btn btn-primary">View All Events</InteractiveHoverButton>
         </div>
       </div>
     </section>

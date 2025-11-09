@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa'
 import './Contact.css'
+import InteractiveHoverButton from './ui/interactive-hover-button'
 
 const Contact = () => {
   return (
@@ -73,9 +74,9 @@ const Contact = () => {
                 <textarea rows="5" placeholder="Your message here..."></textarea>
               </div>
 
-              <button type="submit" className="btn btn-primary form-submit">
+              <InteractiveHoverButton type="submit" className="btn btn-primary form-submit">
                 <FaPaperPlane /> Send Message
-              </button>
+              </InteractiveHoverButton>
             </form>
           </div>
         </div>
