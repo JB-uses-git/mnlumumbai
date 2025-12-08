@@ -23,6 +23,7 @@
   transition: all 0.35s ease;
   width: 100%;
   justify-content: center;
+  white-space: nowrap;
 }
 
 .interactive-hover-button .ihb-text-hover {
@@ -36,6 +37,9 @@
   transition: all 0.35s ease;
   width: 100%;
   justify-content: center;
+  white-space: nowrap;
+  left: 0;
+  right: 0;
 }
 
 .interactive-hover-button .ihb-bg {

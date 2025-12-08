@@ -1,19 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import './TubelightNavbar.css'
 
-const TubelightNavbar = ({ items, className = '' }) => {
-  const [activeTab, setActiveTab] = useState(items[0]?.name || '')
-  const [isMobile, setIsMobile] = useState(false)
+const TubelightNavbar = ({ items, className = '', activeItem }) => {
+  const [activeTab, setActiveTab] = useState(activeItem || items[0]?.name || '')
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
+    if (activeItem && activeItem !== activeTab) {
+      setActiveTab(activeItem)
     }
-
-    handleResize()
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
+  }, [activeItem, activeTab])
 
   const handleClick = (item) => {
     setActiveTab(item.name)
