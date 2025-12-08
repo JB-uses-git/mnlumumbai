@@ -20,7 +20,7 @@ const Hero = () => {
             <AnimatedHero words={["Legal Studies", "Training", "Research"]} interval={2200} />
           </div>
           <p className="hero-description">
-            Creating Legal Excellence Through Research and Training. 
+            Creating Legal Excellence Through Research and Training <br  />
             Join a community of scholars dedicated to advancing legal discourse 
             and academic excellence.
           </p>
