@@ -5,8 +5,8 @@
 }
 
 :root {
-  /* Light / off-white theme variables (base color updated to #fffd74) */
-  --primary: #fffd74; /* bright warm yellow page background (requested) */
+  /* Light / off-white theme variables (base color updated to #FAF0CA) */
+  --primary: #FAF0CA; /* warm cream page background (requested) */
   --primary-dark: #efe97a;
   --secondary: #fff6b8;
   --accent: #0b66c3; /* deep blue accent (kept) */
@@ -14,25 +14,25 @@
   --light: #ffffff;
   --gray: #6b7280;
   --white: #ffffff;
-  --bg-dark: #fffd74; /* page background (theme: #fffd74) */
+  --bg-dark: #FAF0CA; /* page background (theme: #FAF0CA) */
   --bg-secondary: #fff6b8;
   --bg-card: #ffffff;
   --border: #efe7dd;
-  /* header-specific colors: a solid mix of white and the main theme color (#fffd74) */
-  --header-bg: #fffdf5; /* mix of white and #fffd74 */
+  /* header-specific colors: updated to #0D3B66 */
+  --header-bg: #0D3B66; /* deep blue header background (requested) */
   --header-border: #efe7dd;
   /* keep vars compatible with previous gradient usage (set both to same color for a solid) */
   --header-bg-start: var(--header-bg);
   --header-bg-end: var(--header-bg);
-  /* Header-specific colors: a mix of white and the main theme color (#fffd74) */
-  --header-bg-start: #ffffff;
-  --header-bg-end: #fffd74;
-  --header-border: rgba(222, 197, 150, 0.6);
+  /* Header-specific colors: deep blue header (#0D3B66) */
+  --header-bg-start: #0D3B66;
+  --header-bg-end: #0D3B66;
+  --header-border: rgba(13, 59, 102, 0.6);
   /* header-specific variables */
-  --header-bg: rgba(255,253,116,0.96); /* warm yellow derived from main color */
+  --header-bg: rgba(13,59,102,0.96); /* deep blue header background */
   --header-border: rgba(0,0,0,0.06);
-  /* Header-specific background (slightly closer to white but in the same warm tone) */
-  --header-bg: #fffdf5;
+  /* Header-specific background (deep blue) */
+  --header-bg: #0D3B66;
   --header-border: #efe6d0;
   --shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
   --shadow-lg: 0 12px 40px rgba(15, 23, 42, 0.08);
