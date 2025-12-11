@@ -10,7 +10,20 @@ const Hero = () => {
       <div className="hero-overlay"></div>
       <div className="container hero-content">
         <div className="hero-text fade-in-up">
-          <span className="hero-badge">🎓 Maharashtra National Law University</span>
+          <span 
+  className="hero-badge"
+  style={{ 
+    fontSize: '1.5rem',           // or 2.2rem / 32px if you want it even bigger
+    fontWeight: '600',
+    marginLeft: '-40px',        // adjust this value until it feels perfect
+                                // try: -8px, -12px, -16px, -20px
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: '10px'
+  }}
+>
+  🎓 Maharashtra National Law University
+</span>
           <h1 className="hero-title">
             Welcome to <br />
             <span className="gradient-text">MNLU Mumbai</span>

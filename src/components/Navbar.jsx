@@ -5,7 +5,7 @@ import TubelightNavbar from './ui/TubelightNavbar'
 const SECTION_CONFIG = [
   { name: 'Home', id: 'home', icon: FaHome },
   { name: 'About', id: 'about', icon: FaInfoCircle },
-  { name: 'Programs', id: 'programs', icon: FaBook },
+  { name: 'Faculty', id: 'faculty', icon: FaBook },
   { name: 'Events', id: 'events', icon: FaCalendarAlt },
   { name: 'Gallery', id: 'gallery', icon: FaImages },
   { name: 'Contact', id: 'contact', icon: FaEnvelope }
