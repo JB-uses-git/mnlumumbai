@@ -8,11 +8,15 @@ const EditorialTestimonial = ({ testimonials }) => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      handleNext()
-    }, 5000)
+      setIsTransitioning(true)
+      setTimeout(() => {
+        setActive((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))
+        setTimeout(() => setIsTransitioning(false), 50)
+      }, 300)
+    }, 3000)
 
     return () => clearInterval(timer)
-  }, [active])
+  }, [])
 
   const handleChange = (index) => {
     if (index === active || isTransitioning) return
