@@ -1,10 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import './EditorialTestimonial.css'
 
 const EditorialTestimonial = ({ testimonials }) => {
   const [active, setActive] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      handleNext()
+    }, 5000)
+
+    return () => clearInterval(timer)
+  }, [active])
 
   const handleChange = (index) => {
     if (index === active || isTransitioning) return
