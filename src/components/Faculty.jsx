@@ -9,12 +9,12 @@ const Faculty = memo(() => {
       image: '/images/faculty/1728539134550.jpeg'
     },
     {
-      name: 'Shweta Ma\'am',
-      image: '/images/faculty/1740245639117.jpeg'
-    },
-    {
       name: 'Suraj Sir',
       image: '/images/faculty/IMG_8815.JPG'
+    },
+    {
+      name: 'Shweta Ma\'am',
+      image: '/images/faculty/1740245639117.jpeg'
     }
   ]
 
@@ -29,19 +29,19 @@ const Faculty = memo(() => {
     },
     {
       id: 2,
-      quote: "Shweta Ma'am brings a perfect blend of academic rigor and practical insights. Her mentorship has shaped countless successful legal careers.",
-      author: "Shweta Ma'am",
-      role: "Associate Professor",
-      company: "Criminal Law",
-      image: "/images/faculty/1740245639117.jpeg",
-    },
-    {
-      id: 3,
       quote: "Suraj Sir's expertise in corporate law and his passion for research make him an invaluable asset to our institution and students.",
       author: "Suraj Sir",
       role: "Assistant Professor",
       company: "Corporate Law",
       image: "/images/faculty/IMG_8815.JPG",
+    },
+    {
+      id: 3,
+      quote: "Shweta Ma'am brings a perfect blend of academic rigor and practical insights. Her mentorship has shaped countless successful legal careers.",
+      author: "Shweta Ma'am",
+      role: "Associate Professor",
+      company: "Criminal Law",
+      image: "/images/faculty/1740245639117.jpeg",
     },
   ]
 
