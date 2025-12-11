@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { memo } from 'react'
 import './Gallery.css'
 import InteractiveHoverButton from './ui/interactive-hover-button'
 
-const Gallery = () => {
+const Gallery = memo(() => {
   const images = [
     {
       url: '/images/graduation.jpg',
@@ -62,6 +62,6 @@ const Gallery = () => {
       </div>
     </section>
   )
-}
+})
 
 export default Gallery

@@ -30,6 +30,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const headerOffset = 140
+    let ticking = false
 
     const handleScroll = () => {
       let currentSection = SECTION_CONFIG[0].name
@@ -59,11 +60,19 @@ const Navbar = () => {
       }
 
       setActiveSection((prev) => (prev === currentSection ? prev : currentSection))
+      ticking = false
+    }
+
+    const requestTick = () => {
+      if (!ticking) {
+        requestAnimationFrame(handleScroll)
+        ticking = true
+      }
     }
 
     handleScroll()
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', requestTick, { passive: true })
+    return () => window.removeEventListener('scroll', requestTick)
   }, [])
 
   const navItems = [

@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { FaCalendar, FaMapMarkerAlt, FaClock, FaArrowRight } from 'react-icons/fa'
 import './Events.css'
 import InteractiveHoverButton from './ui/interactive-hover-button'
 
-const Events = () => {
+const Events = memo(() => {
   const events = [
     {
       title: 'National Moot Court Competition',
@@ -113,6 +113,6 @@ const Events = () => {
       </div>
     </section>
   )
-}
+})
 
 export default Events

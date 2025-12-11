@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { FaAward, FaUsers, FaGlobe, FaLightbulb } from 'react-icons/fa'
 import './About.css'
 import InteractiveHoverButton from './ui/interactive-hover-button'
 
-const About = () => {
+const About = memo(() => {
   const features = [
     {
       icon: <FaAward />,
@@ -76,6 +76,6 @@ const About = () => {
       </div>
     </section>
   )
-}
+})
 
 export default About
