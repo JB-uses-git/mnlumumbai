@@ -5,12 +5,12 @@ import EditorialTestimonial from './ui/EditorialTestimonial'
 const Faculty = memo(() => {
   const facultyMembers = [
     {
-      name: 'Aastha Ma\'am',
-      image: '/images/faculty/1728539134550.jpeg'
-    },
-    {
       name: 'Suraj Sir',
       image: '/images/faculty/IMG_8815.JPG'
+    },
+    {
+      name: 'Aastha Ma\'am',
+      image: '/images/faculty/1728539134550.jpeg'
     },
     {
       name: 'Shweta Ma\'am',
@@ -21,19 +21,19 @@ const Faculty = memo(() => {
   const testimonials = [
     {
       id: 1,
-      quote: "Aastha Ma'am's dedication to legal education is unmatched. Her innovative teaching methods have transformed how we approach constitutional law.",
-      author: "Aastha Ma'am",
-      role: "Professor",
-      company: "Constitutional Law",
-      image: "/images/faculty/1728539134550.jpeg",
-    },
-    {
-      id: 2,
       quote: "Suraj Sir's expertise in corporate law and his passion for research make him an invaluable asset to our institution and students.",
       author: "Suraj Sir",
       role: "Assistant Professor",
       company: "Corporate Law",
       image: "/images/faculty/IMG_8815.JPG",
+    },
+    {
+      id: 2,
+      quote: "Aastha Ma'am's dedication to legal education is unmatched. Her innovative teaching methods have transformed how we approach constitutional law.",
+      author: "Aastha Ma'am",
+      role: "Professor",
+      company: "Constitutional Law",
+      image: "/images/faculty/1728539134550.jpeg",
     },
     {
       id: 3,

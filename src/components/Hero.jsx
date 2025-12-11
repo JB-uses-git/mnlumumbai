@@ -42,24 +42,7 @@ const Hero = () => {
               Explore Programs <FaArrowRight />
             </InteractiveHoverButton>
           </div>
-          <div className="hero-stats">
-            <div className="stat-item">
-              <h3>5000+</h3>
-              <p>Students</p>
-            </div>
-            <div className="stat-item">
-              <h3>200+</h3>
-              <p>Faculty Members</p>
-            </div>
-            <div className="stat-item">
-              <h3>95%</h3>
-              <p>Placement Rate</p>
-            </div>
-            <div className="stat-item">
-              <h3>50+</h3>
-              <p>Countries</p>
-            </div>
-          </div>
+          {/* hero stats removed per request */}
         </div>
       </div>
     </section>

@@ -1,13 +1,13 @@
 .faculty {
   background: var(--page-bg);
-  padding: 80px 0;
+  padding: 40px 0; /* reduced to bring section up */
 }
 
 .faculty-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  margin-top: 3rem;
+  gap: 2rem; /* slightly tighter spacing */
+  margin-top: 1.5rem; /* reduce top gap to pull content up */
 }
 
 .faculty-card {
@@ -58,7 +58,7 @@
 
 @media (max-width: 768px) {
   .faculty {
-    padding: 60px 0;
+    padding: 30px 0; /* reduce mobile vertical padding as well */
   }
 
   .faculty-grid {
