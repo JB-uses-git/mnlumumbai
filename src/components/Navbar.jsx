@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { FaHome, FaInfoCircle, FaBook, FaCalendarAlt, FaImages, FaEnvelope, FaUserGraduate } from 'react-icons/fa'
+import { FaHome, FaInfoCircle, FaBook, FaCalendarAlt, FaBlog, FaEnvelope, FaUserGraduate } from 'react-icons/fa'
 import TubelightNavbar from './ui/TubelightNavbar'
 
 const SECTION_CONFIG = [
@@ -7,7 +7,7 @@ const SECTION_CONFIG = [
   { name: 'About', id: 'about', icon: FaInfoCircle },
   { name: 'Faculty', id: 'faculty', icon: FaBook },
   { name: 'Events', id: 'events', icon: FaCalendarAlt },
-  { name: 'Gallery', id: 'gallery', icon: FaImages },
+  { name: 'Blog', id: 'blog', icon: FaBlog },
   { name: 'Contact', id: 'contact', icon: FaEnvelope }
 ]
 
