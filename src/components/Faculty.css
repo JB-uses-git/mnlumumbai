@@ -52,6 +52,14 @@
   margin: 0;
 }
 
+.faculty-title {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--gray);
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
 @media (max-width: 1024px) {
   .faculty-grid {
     grid-template-columns: repeat(2, 1fr);

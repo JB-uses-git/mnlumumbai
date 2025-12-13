@@ -2,6 +2,36 @@
   background: var(--page-bg);
 }
 
+.events-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.events-tab {
+  padding: 0.75rem 2rem;
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--dark);
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.events-tab:hover {
+  background: var(--accent);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.events-tab.active {
+  background: var(--accent);
+  color: var(--white);
+}
+
 .events-grid {
   margin-bottom: 3rem;
 }

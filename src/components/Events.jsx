@@ -1,10 +1,12 @@
-import React, { memo } from 'react'
+import React, { memo, useState } from 'react'
 import { FaCalendar, FaMapMarkerAlt, FaClock, FaArrowRight } from 'react-icons/fa'
 import './Events.css'
 import InteractiveHoverButton from './ui/interactive-hover-button'
 
 const Events = memo(() => {
-  const events = [
+  const [activeTab, setActiveTab] = useState('upcoming')
+
+  const upcomingEvents = [
     {
       title: 'National Moot Court Competition',
       date: 'March 15-17, 2025',
@@ -55,6 +57,65 @@ const Events = memo(() => {
     }
   ]
 
+  const pastEvents = [
+    {
+      title: 'Training Workshop on Child Care and Protection',
+      date: 'Completed',
+      time: '',
+      location: 'MNLU Mumbai',
+      category: 'Workshop',
+      description: 'Comprehensive training workshop with special emphasis on the POCSO Act and child protection mechanisms'
+    },
+    {
+      title: 'Mastering Civil Advocacy Workshop',
+      date: 'Completed',
+      time: '',
+      location: 'CALSTAR Centre',
+      category: 'Workshop',
+      description: 'A Journey from E-Filing to Execution - practical insights into civil advocacy procedures'
+    },
+    {
+      title: 'Workshop on Emerging Technologies and Cybercrimes',
+      date: 'Completed',
+      time: '',
+      location: 'MNLU Mumbai',
+      category: 'Workshop',
+      description: 'Exploring the intersection of emerging technologies, cybersecurity, and legal frameworks'
+    },
+    {
+      title: 'Colloquium on AI, Fintech, Metaverse, and Human Rights',
+      date: 'Completed',
+      time: '',
+      location: 'Main Auditorium',
+      category: 'Academic',
+      description: 'Interdisciplinary discussion on the impact of cutting-edge technologies on human rights'
+    },
+    {
+      title: 'Session on Rights of Indigenous People and SC/ST Community',
+      date: 'Completed',
+      time: '',
+      location: 'Conference Hall',
+      category: 'Lecture',
+      description: 'Expert session addressing the legal rights and protections for indigenous communities'
+    },
+    {
+      title: 'Expert Discussion and Conference on Child Independent Lawyer',
+      date: 'Completed',
+      time: '',
+      location: 'CALSTAR Centre',
+      category: 'Academic',
+      description: 'Conference exploring the role and significance of independent legal representation for children'
+    },
+    {
+      title: 'National Symposium on AI: Privacy, Security, and IPR',
+      date: 'Completed',
+      time: '',
+      location: 'Main Auditorium',
+      category: 'Academic',
+      description: 'Comprehensive symposium examining the legal challenges of AI in privacy, security, and intellectual property'
+    }
+  ]
+
   const getCategoryColor = (category) => {
     const colors = {
       'Competition': '#ef4444',
@@ -67,16 +128,33 @@ const Events = memo(() => {
     return colors[category] || '#6b7280'
   }
 
+  const displayEvents = activeTab === 'upcoming' ? upcomingEvents : pastEvents
+
   return (
     <section className="section events" id="events">
       <div className="container">
-        <h2 className="section-title">Upcoming Events</h2>
+        <h2 className="section-title">Events & Initiatives</h2>
         <p className="section-subtitle">
           Stay updated with our latest events, workshops, and academic activities
         </p>
 
+        <div className="events-tabs">
+          <button 
+            className={`events-tab ${activeTab === 'upcoming' ? 'active' : ''}`}
+            onClick={() => setActiveTab('upcoming')}
+          >
+            Upcoming Events
+          </button>
+          <button 
+            className={`events-tab ${activeTab === 'past' ? 'active' : ''}`}
+            onClick={() => setActiveTab('past')}
+          >
+            Past Initiatives
+          </button>
+        </div>
+
         <div className="events-grid grid grid-3">
-          {events.map((event, index) => (
+          {displayEvents.map((event, index) => (
             <div key={index} className="event-card card">
               <span 
                 className="event-category" 
@@ -91,18 +169,22 @@ const Events = memo(() => {
                   <FaCalendar />
                   <span>{event.date}</span>
                 </div>
-                <div className="event-detail">
-                  <FaClock />
-                  <span>{event.time}</span>
-                </div>
+                {event.time && (
+                  <div className="event-detail">
+                    <FaClock />
+                    <span>{event.time}</span>
+                  </div>
+                )}
                 <div className="event-detail">
                   <FaMapMarkerAlt />
                   <span>{event.location}</span>
                 </div>
               </div>
-              <InteractiveHoverButton className="btn btn-secondary event-btn">
-                Register Now <FaArrowRight />
-              </InteractiveHoverButton>
+              {activeTab === 'upcoming' && (
+                <InteractiveHoverButton className="btn btn-secondary event-btn">
+                  Register Now <FaArrowRight />
+                </InteractiveHoverButton>
+              )}
             </div>
           ))}
         </div>

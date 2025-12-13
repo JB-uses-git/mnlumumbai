@@ -1,39 +1,37 @@
 import React, { memo } from 'react'
-import { FaAward, FaUsers, FaGlobe, FaLightbulb } from 'react-icons/fa'
+import { FaBook, FaShareAlt, FaCalendarAlt, FaLightbulb } from 'react-icons/fa'
 import './About.css'
-import InteractiveHoverButton from './ui/interactive-hover-button'
 
 const About = memo(() => {
-  const features = [
+  const wings = [
     {
-      icon: <FaAward />,
-      title: 'Excellence',
-      description: 'Recognized globally for academic excellence and innovation in legal education'
+      icon: <FaBook />,
+      title: 'Research & Publication Wing',
+      description: 'Dedicated to producing quality legal scholarship through research projects, reports, alternative judgments, and editorial activities. Oversees the Centre\'s Blog and Newsletter.'
     },
     {
-      icon: <FaUsers />,
-      title: 'Community',
-      description: 'A diverse community of scholars, practitioners, and thought leaders'
+      icon: <FaShareAlt />,
+      title: 'Social Media & Marketing Wing',
+      description: 'Handles the Centre\'s online presence across Instagram, LinkedIn, Twitter, and Facebook. Designs promotional content and markets events to reach a wider audience.'
     },
     {
-      icon: <FaGlobe />,
-      title: 'Global Reach',
-      description: 'International partnerships and exchange programs across 50+ countries'
+      icon: <FaCalendarAlt />,
+      title: 'Events & Public Relations Wing',
+      description: 'Oversees external communication, manages correspondence with authorities, and leads promotional outreach. Conceptualizes and organizes workshops, conferences, and symposiums.'
     },
     {
       icon: <FaLightbulb />,
-      title: 'Innovation',
-      description: 'Cutting-edge research facilities and modern teaching methodologies'
+      title: 'Innovation & Outreach',
+      description: 'Provides consultancy, support, and guidance with a strong focus on social justice and legal awareness through socio-legal outreach programs.'
     }
   ]
 
   return (
     <section className="section about" id="about">
       <div className="container">
-        <h2 className="section-title">About MNLU Mumbai</h2>
+        <h2 className="section-title">About CALSTAR</h2>
         <p className="section-subtitle">
-          Maharashtra National Law University, Mumbai is committed to creating legal 
-          excellence through research and training, advancing the legal discourse in India.
+          The Centre for Advanced Legal Studies, Training and Research at Maharashtra National Law University, Mumbai
         </p>
 
         <div className="about-content">
@@ -41,35 +39,36 @@ const About = memo(() => {
             <div className="image-placeholder">
               <picture>
                 <source type="image/webp" srcSet="/images/optimized/IMG_6008-scaled-800.webp 800w, /images/optimized/IMG_6008-scaled-400.webp 400w" />
-                <img src="/images/optimized/IMG_6008-scaled-800.jpg" srcSet="/images/optimized/IMG_6008-scaled-800.jpg 800w, /images/optimized/IMG_6008-scaled-400.jpg 400w" alt="MNLU Mumbai" loading="lazy" />
+                <img src="/images/optimized/IMG_6008-scaled-800.jpg" srcSet="/images/optimized/IMG_6008-scaled-800.jpg 800w, /images/optimized/IMG_6008-scaled-400.jpg 400w" alt="CALSTAR Centre" loading="lazy" />
               </picture>
             </div>
           </div>
 
           <div className="about-text">
-            <h3>Centre for Advanced Legal Studies, Training and Research</h3>
+            <h3>Introduction</h3>
             <p>
-              CALSTAR is a single, unique, independent flagship centre at Maharashtra 
-              National Law University Mumbai that envisions bringing all academic, research 
-              and training activities and its confluence with existing, contemporary and 
-              futuristic law.
+              The Centre for Advanced Legal Studies, Training and Research [CALSTAR] at Maharashtra National Law University, Mumbai, established in 2022, is dedicated to bringing all academic, research, and training activities relating to existing, contemporary, and futuristic law within a unique and independent department. The Centre serves as a platform for students, academicians, and professionals to engage in meaningful discussions, research, and participate in action-oriented learning.
             </p>
+            <h3 style={{ marginTop: '1.5rem' }}>Our Objectives</h3>
             <p>
-              CALSTAR aims to participate in, contribute to, and endeavour to mould the 
-              legal discourse in the best possible way. Like a star, we at the centre wish 
-              to be the beacon of light for all the present and future endeavours in the 
-              field of law.
+              Our primary objective is to facilitate advanced legal studies for students, professionals, research scholars, laypersons, and all stakeholders in society. We achieve this through various academic programs, including short-term and long-term certificate courses, diplomas, and degrees. Additionally, the Centre aims to provide both theoretical and practical training by collaborating with experts and luminaries in the field, bridging the gap between academic knowledge and practical understanding of the law.
             </p>
-            <InteractiveHoverButton className="btn btn-primary">Learn More About Us</InteractiveHoverButton>
+            <h3 style={{ marginTop: '1.5rem' }}>Our Vision</h3>
+            <p>
+              Our vision is to create a space where curiosity meets scholarship through empowering students and researchers to explore, learn, and produce impactful legal work that influences thought and practice in society. Under the distinguished guidance of Ms. Aastha Tiwari along with the active participation of all the members, the Centre contributes to the expanding field of legal scholarship and promotes socially relevant legal education. Through its research and outreach, the Centre aims to make law a tool for empowerment, awareness, and lasting change.
+            </p>
           </div>
         </div>
 
+        <h3 className="section-title" style={{ marginTop: '3rem', fontSize: '1.8rem' }}>Our Structure</h3>
+        <p className="section-subtitle">CALSTAR functions through four wings, each focusing on a specific area of contribution and growth</p>
+        
         <div className="features-grid grid grid-4">
-          {features.map((feature, index) => (
+          {wings.map((wing, index) => (
             <div key={index} className="feature-card card">
-              <div className="feature-icon">{feature.icon}</div>
-              <h4>{feature.title}</h4>
-              <p>{feature.description}</p>
+              <div className="feature-icon">{wing.icon}</div>
+              <h4>{wing.title}</h4>
+              <p>{wing.description}</p>
             </div>
           ))}
         </div>

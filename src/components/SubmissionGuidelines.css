@@ -1,0 +1,348 @@
+.submission-guidelines-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--page-bg);
+}
+
+/* Navbar */
+.guidelines-navbar {
+  position: sticky;
+  top: 0;
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--header-border);
+  padding: 1rem 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+
+.guidelines-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.guidelines-nav-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 0;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.home-btn, .back-btn {
+  background: var(--accent);
+  border: none;
+  color: var(--white);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.75rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.home-btn:hover, .back-btn:hover {
+  background: var(--dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Hero Section */
+.guidelines-hero {
+  background: var(--header-bg);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.guidelines-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+.guidelines-hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--gray);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Content */
+.guidelines-content {
+  flex: 1;
+  padding: 4rem 0;
+}
+
+.guidelines-section {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.section-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: var(--accent);
+  color: var(--white);
+  border-radius: 12px;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.guidelines-section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 1.5rem;
+}
+
+.guidelines-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--gray);
+}
+
+.guidelines-text p {
+  margin-bottom: 1rem;
+}
+
+.guidelines-text strong {
+  color: var(--dark);
+  font-weight: 600;
+}
+
+.guidelines-list {
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.guidelines-list li {
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+}
+
+/* Submission Action */
+.submission-action {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 2rem;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+}
+
+.submission-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+}
+
+.submission-note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--gray);
+  font-style: italic;
+}
+
+/* Review Timeline */
+.timeline-intro {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  border-left: 4px solid var(--accent);
+}
+
+.review-stages {
+  display: grid;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.review-stage {
+  padding: 2rem;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.review-stage:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.stage-number {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--white);
+  padding: 0.5rem 1.25rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.stage-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+.stage-description {
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+.timeline-footer {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+}
+
+.timeline-footer p {
+  margin-bottom: 1rem;
+}
+
+.timeline-footer p:last-child {
+  margin-bottom: 0;
+}
+
+/* Hero Icon */
+.hero-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: var(--accent);
+  color: var(--white);
+  border-radius: 50%;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Category Styling */
+.category-list {
+  display: grid;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.category-item {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--accent);
+}
+
+.category-item h3 {
+  color: var(--dark);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.category-item p {
+  color: var(--gray);
+  margin: 0;
+  line-height: 1.7;
+}
+
+.category-simple-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0;
+}
+
+.category-simple-list li {
+  padding: 0.75rem 1rem;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  border-left: 3px solid var(--accent);
+  font-size: 1.05rem;
+}
+
+.note {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background: rgba(13, 59, 102, 0.05);
+  border-radius: 8px;
+  border-left: 4px solid var(--accent);
+  font-size: 1rem;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.back-btn {
+  background: transparent;
+  border: 1px solid var(--dark);
+  color: var(--dark);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-btn:hover {
+  background: var(--dark);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .guidelines-hero-title {
+    font-size: 2rem;
+  }
+
+  .guidelines-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .guidelines-section {
+    padding: 1.5rem;
+  }
+
+  .guidelines-section-title {
+    font-size: 1.5rem;
+  }
+
+  .guidelines-nav-container {
+    padding: 0 1rem;
+  }
+
+  .guidelines-nav-title {
+    font-size: 1.2rem;
+  }
+}

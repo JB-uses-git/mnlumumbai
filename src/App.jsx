@@ -9,6 +9,9 @@ import Blog from './components/Blog'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import BlogsPage from './components/BlogsPage'
+import SubmissionGuidelinesJournal from './components/SubmissionGuidelinesJournal'
+import SubmissionGuidelinesBlog from './components/SubmissionGuidelinesBlog'
+import BoardOfEditors from './components/BoardOfEditors'
 import './App.css'
 
 // Main Page Component
@@ -34,6 +37,9 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/blogs" element={<BlogsPage />} />
+          <Route path="/submission-guidelines-journal" element={<SubmissionGuidelinesJournal />} />
+          <Route path="/submission-guidelines-blog" element={<SubmissionGuidelinesBlog />} />
+          <Route path="/board-of-editors" element={<BoardOfEditors />} />
         </Routes>
       </div>
     </Router>

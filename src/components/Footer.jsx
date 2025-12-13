@@ -9,10 +9,9 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section footer-brand">
-            <img src="/calstar-logo.svg" alt="CALSTAR Logo" className="footer-logo-img" />
+            <h3 style={{ color: 'var(--dark)', marginBottom: '1rem' }}>CALSTAR</h3>
             <p className="footer-description">
-              Maharashtra National Law University, Mumbai is committed to excellence 
-              in legal education, research, and service to society.
+              Centre for Advanced Legal Studies, Training and Research at Maharashtra National Law University, Mumbai - empowering students and researchers to produce impactful legal work.
             </p>
             <div className="social-links">
               <a href="https://www.youtube.com/MNLUMumbai" className="social-link"><FaYoutube /></a>

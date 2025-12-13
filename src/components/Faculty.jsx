@@ -6,15 +6,18 @@ const Faculty = memo(() => {
   const facultyMembers = [
     {
       name: 'Suraj Sir',
-      image: '/images/faculty/IMG_8815.JPG'
+      image: '/images/faculty/IMG_8815.JPG',
+      title: ''
     },
     {
       name: 'Aastha Ma\'am',
-      image: '/images/faculty/1728539134550.jpeg'
+      image: '/images/faculty/1728539134550.jpeg',
+      title: 'Director, CALSTAR'
     },
     {
       name: 'Shweta Ma\'am',
-      image: '/images/faculty/1740245639117.jpeg'
+      image: '/images/faculty/1740245639117.jpeg',
+      title: ''
     }
   ]
 
@@ -29,9 +32,9 @@ const Faculty = memo(() => {
     },
     {
       id: 2,
-      quote: "Aastha Ma'am's dedication to legal education is unmatched. Her innovative teaching methods have transformed how we approach constitutional law.",
+      quote: "Under the distinguished guidance of Aastha Ma'am, CALSTAR contributes to the expanding field of legal scholarship and promotes socially relevant legal education.",
       author: "Aastha Ma'am",
-      role: "Professor",
+      role: "Director, CALSTAR",
       company: "Constitutional Law",
       image: "/images/faculty/1728539134550.jpeg",
     },
@@ -48,9 +51,9 @@ const Faculty = memo(() => {
   return (
     <section className="section faculty" id="faculty">
       <div className="container">
-        <h2 className="section-title">Faculty</h2>
+        <h2 className="section-title">Distinguished Faculty & Mentors</h2>
         <p className="section-subtitle">
-          Meet our dedicated team of educators
+          Meet our dedicated team of educators guiding CALSTAR
         </p>
 
         <div className="faculty-grid">
@@ -66,6 +69,7 @@ const Faculty = memo(() => {
                 />
               </div>
               <h3 className="faculty-name">{faculty.name}</h3>
+              {faculty.title && <p className="faculty-title">{faculty.title}</p>}
             </div>
           ))}
         </div>

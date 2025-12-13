@@ -1,4 +1,4 @@
-import React, { useState, memo } from 'react'
+import React, { useState, useEffect, memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { FaHome, FaChevronDown } from 'react-icons/fa'
 import './BlogsPage.css'
@@ -7,6 +7,18 @@ import Footer from './Footer'
 const BlogsPage = memo(() => {
   const navigate = useNavigate()
   const [dropdownOpen, setDropdownOpen] = useState(false)
+  const dropdownTimer = React.useRef(null)
+
+  const openDropdown = () => {
+    if (dropdownTimer.current) clearTimeout(dropdownTimer.current)
+    setDropdownOpen(true)
+  }
+
+  const closeDropdown = () => {
+    dropdownTimer.current = setTimeout(() => {
+      setDropdownOpen(false)
+    }, 150)
+  }
 
   const allBlogs = [
     {
@@ -121,6 +133,16 @@ const BlogsPage = memo(() => {
     }
   ]
 
+  useEffect(() => {
+    // Ensure the blogs page opens scrolled to top when navigated to
+    try {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    } catch (e) {
+      // fallback for older browsers
+      window.scrollTo(0, 0)
+    }
+  }, [])
+
   return (
     <div className="blogs-page">
       {/* Blogs Page Navbar */}
@@ -135,21 +157,41 @@ const BlogsPage = memo(() => {
               <span>Blogs</span>
             </li>
             <li 
-              className="blogs-nav-item dropdown"
-              onMouseEnter={() => setDropdownOpen(true)}
-              onMouseLeave={() => setDropdownOpen(false)}
+              className={`blogs-nav-item dropdown ${dropdownOpen ? 'open' : ''}`}
+              onMouseEnter={openDropdown}
+              onMouseLeave={closeDropdown}
             >
-              <span className="dropdown-trigger">
+              <div className="dropdown-trigger">
                 Submission Guidelines <FaChevronDown className="dropdown-icon" />
-              </span>
+              </div>
               {dropdownOpen && (
-                <ul className="dropdown-menu">
-                  <li className="dropdown-item">Submission Guideline for Journal</li>
-                  <li className="dropdown-item">Submission Guideline for Blog</li>
+                <ul 
+                  className="dropdown-menu"
+                  onMouseEnter={openDropdown}
+                  onMouseLeave={closeDropdown}
+                >
+                  <li 
+                    className="dropdown-item" 
+                    onClick={() => {
+                      setDropdownOpen(false)
+                      navigate('/submission-guidelines-journal')
+                    }}
+                  >
+                    Submission Guideline for Journal
+                  </li>
+                  <li 
+                    className="dropdown-item" 
+                    onClick={() => {
+                      setDropdownOpen(false)
+                      navigate('/submission-guidelines-blog')
+                    }}
+                  >
+                    Submission Guideline for Blog
+                  </li>
                 </ul>
               )}
             </li>
-            <li className="blogs-nav-item">
+            <li className="blogs-nav-item" onClick={() => navigate('/board-of-editors')}>
               <span>Board of Editors</span>
             </li>
           </ul>
