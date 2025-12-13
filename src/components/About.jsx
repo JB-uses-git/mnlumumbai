@@ -31,8 +31,11 @@ const About = memo(() => {
       <div className="container">
         <h2 className="section-title">About CALSTAR</h2>
         <p className="section-subtitle">
-          The Centre for Advanced Legal Studies, Training and Research at Maharashtra National Law University, Mumbai
+          The Centre for Advanced Legal Studies, Training and Research at Maharashtra National Law University, Mumbai - Established 2022
         </p>
+        <div className="submissions-teaser" style={{ background: 'var(--accent)', color: 'var(--white)', padding: '1rem 2rem', borderRadius: '8px', textAlign: 'center', margin: '1.5rem auto', maxWidth: '600px', fontWeight: '600', fontSize: '1.1rem' }}>
+          📝 Call for Blogs Open—Submit Today!
+        </div>
 
         <div className="about-content">
           <div className="about-image">

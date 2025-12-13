@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { FaHome, FaInfoCircle, FaBook, FaCalendarAlt, FaBlog, FaEnvelope, FaUserGraduate } from 'react-icons/fa'
 import TubelightNavbar from './ui/TubelightNavbar'
 
 const SECTION_CONFIG = [
   { name: 'Home', id: 'home', icon: FaHome },
-  { name: 'About', id: 'about', icon: FaInfoCircle },
+  { name: 'About', id: 'about', icon: FaInfoCircle, isRoute: true, route: '/about' },
   { name: 'Faculty', id: 'faculty', icon: FaBook },
   { name: 'Events', id: 'events', icon: FaCalendarAlt },
   { name: 'Blog', id: 'blog', icon: FaBlog },
@@ -15,6 +16,7 @@ const APPLY_ITEM = { name: 'Apply Now', icon: FaUserGraduate, targetId: 'contact
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState(SECTION_CONFIG[0].name)
+  const navigate = useNavigate()
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id)
@@ -23,9 +25,13 @@ const Navbar = () => {
     }
   }
 
-  const handleNavClick = (id, name) => {
-    scrollToSection(id)
-    setActiveSection(name)
+  const handleNavClick = (item, name) => {
+    if (item.isRoute && item.route) {
+      navigate(item.route)
+    } else {
+      scrollToSection(item.id)
+      setActiveSection(name)
+    }
   }
 
   useEffect(() => {
@@ -76,15 +82,15 @@ const Navbar = () => {
   }, [])
 
   const navItems = [
-    ...SECTION_CONFIG.map(({ id, name, icon }) => ({
-      name,
-      icon,
-      onClick: () => handleNavClick(id, name)
+    ...SECTION_CONFIG.map((item) => ({
+      name: item.name,
+      icon: item.icon,
+      onClick: () => handleNavClick(item, item.name)
     })),
     {
       name: APPLY_ITEM.name,
       icon: APPLY_ITEM.icon,
-      onClick: () => handleNavClick(APPLY_ITEM.targetId, SECTION_CONFIG[SECTION_CONFIG.length - 1].name)
+      onClick: () => handleNavClick({ id: APPLY_ITEM.targetId }, SECTION_CONFIG[SECTION_CONFIG.length - 1].name)
     }
   ]
 

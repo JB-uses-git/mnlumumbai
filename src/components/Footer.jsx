@@ -11,14 +11,17 @@ const Footer = () => {
           <div className="footer-section footer-brand">
             <h3 style={{ color: 'var(--dark)', marginBottom: '1rem' }}>CALSTAR</h3>
             <p className="footer-description">
-              Centre for Advanced Legal Studies, Training and Research at Maharashtra National Law University, Mumbai - empowering students and researchers to produce impactful legal work.
+              Centre for Advanced Legal Studies, Training and Research at Maharashtra National Law University, Mumbai - Established 2022
+            </p>
+            <p className="footer-description" style={{ fontSize: '0.9rem', marginTop: '0.5rem', color: 'var(--gray)' }}>
+              Affiliated with Maharashtra National Law University, Mumbai
             </p>
             <div className="social-links">
-              <a href="https://www.youtube.com/MNLUMumbai" className="social-link"><FaYoutube /></a>
-              <a href="https://www.linkedin.com/in/centre-for-advanced-legal-studies-training-and-research-a8447a267" className="social-link"><FaLinkedin /></a>
-              <a href="#" className="social-link"><FaInstagram /></a>
-              <a href="#" className="social-link"><FaFacebook /></a>
-              <a href="#" className="social-link"><FaTwitter /></a>
+              <a href="#" className="social-link" title="Instagram - @calstar_mnlu"><FaInstagram /></a>
+              <a href="https://www.linkedin.com/in/centre-for-advanced-legal-studies-training-and-research-a8447a267" className="social-link" title="LinkedIn"><FaLinkedin /></a>
+              <a href="#" className="social-link" title="Twitter/X"><FaTwitter /></a>
+              <a href="#" className="social-link" title="Facebook"><FaFacebook /></a>
+              <a href="https://www.youtube.com/MNLUMumbai" className="social-link" title="YouTube"><FaYoutube /></a>
             </div>
           </div>
 
@@ -66,7 +69,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          <p>© 2025 Maharashtra National Law University, Mumbai. All rights reserved.</p>
+          <p>© 2025 CALSTAR - Centre for Advanced Legal Studies, Training and Research, Maharashtra National Law University, Mumbai. All rights reserved.</p>
           <p>
             Made with <FaHeart className="heart-icon" /> for excellence in legal education
           </p>

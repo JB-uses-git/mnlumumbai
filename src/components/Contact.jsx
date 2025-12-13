@@ -16,14 +16,6 @@ const Contact = () => {
           <div className="contact-info">
             <div className="info-card card">
               <div className="info-icon">
-                <FaPhone />
-              </div>
-              <h4>Phone</h4>
-              <p>+91 99098 64556</p>
-            </div>
-
-            <div className="info-card card">
-              <div className="info-icon">
                 <FaEnvelope />
               </div>
               <h4>Email</h4>

@@ -44,8 +44,13 @@ const Blog = memo(() => {
       <div className="container">
         <h2 className="section-title">Latest Blogs</h2>
         <p className="section-subtitle">
-          Insights and perspectives on contemporary legal issues
+          Explore analytical pieces on contemporary law, government policy, and legal discourse
         </p>
+        <div className="blog-submissions-banner" style={{ background: 'linear-gradient(135deg, rgba(13, 59, 102, 0.1) 0%, rgba(13, 59, 102, 0.05) 100%)', padding: '1rem 2rem', borderRadius: '8px', textAlign: 'center', margin: '1rem auto 2rem', maxWidth: '700px', border: '2px solid var(--accent)' }}>
+          <p style={{ margin: '0', fontSize: '1.05rem', color: 'var(--dark)' }}>
+            <strong>Share Your Insights:</strong> Submit your analytical work on contemporary legal issues. <a href="#" onClick={(e) => { e.preventDefault(); navigate('/submissions'); }} style={{ color: 'var(--accent)', textDecoration: 'underline', fontWeight: '600' }}>Submit Now</a>
+          </p>
+        </div>
 
         <div className="blog-grid">
           {blogs.map((blog) => (

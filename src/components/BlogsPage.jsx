@@ -156,6 +156,9 @@ const BlogsPage = memo(() => {
             <li className="blogs-nav-item active">
               <span>Blogs</span>
             </li>
+            <li className="blogs-nav-item" onClick={() => navigate('/submissions')}>
+              <span>Submit to Blog</span>
+            </li>
             <li 
               className={`blogs-nav-item dropdown ${dropdownOpen ? 'open' : ''}`}
               onMouseEnter={openDropdown}

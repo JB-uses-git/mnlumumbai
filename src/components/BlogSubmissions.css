@@ -1,0 +1,464 @@
+.blog-submissions-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--page-bg);
+}
+
+/* Navbar */
+.submissions-navbar {
+  position: sticky;
+  top: 0;
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--header-border);
+  padding: 1rem 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+
+.submissions-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.submissions-nav-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 0;
+}
+
+.home-btn,
+.back-btn {
+  background: transparent;
+  border: 1px solid var(--dark);
+  color: var(--dark);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-btn:hover,
+.back-btn:hover {
+  background: var(--dark);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+/* Hero Section */
+.submissions-hero {
+  background: var(--header-bg);
+  padding: 4rem 0;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.submissions-hero .hero-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: var(--accent);
+  color: var(--white);
+  border-radius: 16px;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.submissions-hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.submissions-hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--gray);
+  font-weight: 500;
+}
+
+/* Content */
+.submissions-content {
+  flex: 1;
+  padding: 4rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.submissions-section {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 3rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.submissions-section:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.highlight-section {
+  background: linear-gradient(135deg, rgba(13, 59, 102, 0.02) 0%, rgba(13, 59, 102, 0.05) 100%);
+  border: 2px solid var(--accent);
+}
+
+.section-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: var(--accent);
+  color: var(--white);
+  border-radius: 12px;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.submissions-section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 1.5rem;
+}
+
+.submissions-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--gray);
+}
+
+.submissions-text p {
+  margin-bottom: 1.25rem;
+}
+
+.submissions-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Numbered Lists */
+.submissions-numbered-list {
+  list-style: none;
+  counter-reset: item;
+  padding-left: 0;
+  margin: 1.5rem 0;
+}
+
+.submissions-numbered-list > li {
+  counter-increment: item;
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.submissions-numbered-list > li::before {
+  content: counter(item) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--accent);
+  width: 2rem;
+  text-align: center;
+}
+
+.submissions-numbered-list li strong {
+  color: var(--dark);
+}
+
+/* Timeline List */
+.timeline-list > li {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.25rem;
+  border-left: 4px solid var(--accent);
+}
+
+.timeline-list > li:hover {
+  background: rgba(13, 59, 102, 0.05);
+  transform: translateX(4px);
+  transition: all 0.3s ease;
+}
+
+.timeline-intro {
+  font-weight: 500;
+  color: var(--dark);
+  margin-bottom: 2rem;
+  padding: 1.25rem;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  border-left: 4px solid var(--accent);
+}
+
+.timeline-footer {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  border-left: 4px solid var(--accent);
+}
+
+.important-note {
+  font-weight: 500;
+  color: var(--dark);
+  margin: 0;
+}
+
+/* Google Form Section */
+.google-form-container {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  border: 2px dashed var(--accent);
+}
+
+.form-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.form-instructions {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.form-instructions p {
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 0.75rem;
+}
+
+.form-instructions ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.form-instructions ul li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--gray);
+}
+
+.form-instructions ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* Form Placeholder */
+.form-placeholder {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+.placeholder-content {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.placeholder-icon {
+  font-size: 4rem;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.placeholder-content h4 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+.placeholder-content p {
+  font-size: 1.05rem;
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+
+.email-link {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.email-link:hover {
+  background: var(--accent);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Form Embed (for when Google Form is ready) */
+.form-embed {
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.form-embed iframe {
+  border: none;
+  width: 100%;
+  min-height: 800px;
+}
+
+/* Submission CTA */
+.submission-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(13, 59, 102, 0.2);
+  border: none;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: var(--dark);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(13, 59, 102, 0.3);
+}
+
+.cta-note {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: var(--gray);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .submissions-hero {
+    padding: 3rem 0;
+  }
+
+  .submissions-hero-title {
+    font-size: 1.75rem;
+  }
+
+  .submissions-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .submissions-hero .hero-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+
+  .submissions-content {
+    padding: 2rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .submissions-section {
+    padding: 2rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .submissions-section-title {
+    font-size: 1.5rem;
+  }
+
+  .submissions-text {
+    font-size: 1rem;
+  }
+
+  .submissions-numbered-list > li {
+    padding-left: 2.5rem;
+  }
+
+  .submissions-numbered-list > li::before {
+    font-size: 1.25rem;
+    width: 1.5rem;
+  }
+
+  .google-form-container {
+    padding: 1.5rem;
+  }
+
+  .form-placeholder {
+    padding: 2rem 1rem;
+  }
+
+  .placeholder-icon {
+    font-size: 3rem;
+  }
+
+  .placeholder-content h4 {
+    font-size: 1.5rem;
+  }
+
+  .submit-btn {
+    font-size: 1rem;
+    padding: 0.875rem 2rem;
+  }
+
+  .submissions-nav-container {
+    padding: 0 1rem;
+  }
+
+  .submissions-nav-title {
+    font-size: 1.2rem;
+  }
+}

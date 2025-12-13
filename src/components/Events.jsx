@@ -143,7 +143,7 @@ const Events = memo(() => {
             className={`events-tab ${activeTab === 'upcoming' ? 'active' : ''}`}
             onClick={() => setActiveTab('upcoming')}
           >
-            Upcoming Events
+            Past & Upcoming Events
           </button>
           <button 
             className={`events-tab ${activeTab === 'past' ? 'active' : ''}`}

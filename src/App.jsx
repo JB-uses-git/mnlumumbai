@@ -12,6 +12,9 @@ import BlogsPage from './components/BlogsPage'
 import SubmissionGuidelinesJournal from './components/SubmissionGuidelinesJournal'
 import SubmissionGuidelinesBlog from './components/SubmissionGuidelinesBlog'
 import BoardOfEditors from './components/BoardOfEditors'
+import AboutPage from './components/AboutPage'
+import BlogSubmissions from './components/BlogSubmissions'
+import NotFound from './components/NotFound'
 import './App.css'
 
 // Main Page Component
@@ -37,9 +40,12 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/blogs" element={<BlogsPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/submissions" element={<BlogSubmissions />} />
           <Route path="/submission-guidelines-journal" element={<SubmissionGuidelinesJournal />} />
           <Route path="/submission-guidelines-blog" element={<SubmissionGuidelinesBlog />} />
           <Route path="/board-of-editors" element={<BoardOfEditors />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </Router>
