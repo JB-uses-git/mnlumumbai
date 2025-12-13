@@ -1,21 +1,34 @@
-# MNLU Mumbai - Modern National Law University Website
+# CALSTAR - Centre for Advanced Legal Studies, Training and Research
 
-A clean, modern, and responsive college website built with React and Vite.
+Official website for CALSTAR at Maharashtra National Law University (MNLU), Mumbai. A modern, responsive platform for legal scholarship, research, and academic engagement.
 
-## 🎨 Features
+## � About CALSTAR
 
-- **Modern UI Design** - Clean and sleek interface with gradient backgrounds, smooth animations, and hover effects
-- **Fully Responsive** - Works perfectly on desktop, tablet, and mobile devices
-- **Multiple Sections**:
-  - Hero section with statistics
-  - About section with features
-  - Programs showcase
-  - Upcoming events
-  - Campus gallery
-  - Contact form
-  - Footer with newsletter signup
-- **Interactive Elements** - Smooth scrolling navigation, mobile menu, and engaging button styles
-- **Dummy Data** - Pre-filled with sample content for easy customization
+CALSTAR (Centre for Advanced Legal Studies, Training and Research) was established in 2022 at Maharashtra National Law University, Mumbai. The Centre serves as a platform for students, academicians, and professionals to engage in meaningful discussions, research, and participate in action-oriented learning.
+
+### Our Wings
+
+1. **Research & Publication Wing** - Legal scholarship, research projects, blog, and newsletter
+2. **Social Media & Marketing Wing** - Digital presence across Instagram, LinkedIn, Twitter, and Facebook
+3. **Events & Public Relations Wing** - Workshops, conferences, symposiums, and external communication
+
+## ✨ Features
+
+### Core Pages
+- **Homepage** - Hero section, About CALSTAR, Faculty showcase, Events, Blog teasers, Contact
+- **About Page** (`/about`) - Comprehensive CALSTAR information, structure, objectives, vision
+- **Blogs Page** (`/blogs`) - Complete blog listing with search and categories
+- **Blog Submissions** (`/submissions`) - Call for submissions with Google Form integration
+- **Submission Guidelines** - Separate pages for Journal and Blog submissions
+- **Board of Editors** (`/board-of-editors`) - Editorial board information
+
+### Technical Features
+- **Modern React 18 + Vite** - Fast development and optimized builds
+- **Code Splitting** - Vendor chunks separated for optimal loading
+- **SEO Optimized** - Comprehensive meta tags, Open Graph, Twitter Cards
+- **Mobile Responsive** - Breakpoints at 768px and 1024px
+- **404 Handling** - Custom not-found page with navigation
+- **Sitemap & Robots.txt** - Full search engine indexing support
 
 ## 🚀 Getting Started
 
@@ -45,87 +58,149 @@ npm run dev
 ## 📁 Project Structure
 
 ```
-college-website/
+MNLU/
+├── public/
+│   ├── robots.txt              # SEO: Search engine crawler rules
+│   ├── sitemap.xml             # SEO: All routes indexed
+│   └── calstar-logo.svg
 ├── src/
 │   ├── components/
-│   │   ├── Navbar.jsx & Navbar.css
-│   │   ├── Hero.jsx & Hero.css
-│   │   ├── About.jsx & About.css
-│   │   ├── Programs.jsx & Programs.css
-│   │   ├── Events.jsx & Events.css
-│   │   ├── Gallery.jsx & Gallery.css
-│   │   ├── Contact.jsx & Contact.css
-│   │   └── Footer.jsx & Footer.css
-│   ├── App.jsx
+│   │   ├── Navbar.jsx          # Main navigation
+│   │   ├── Hero.jsx            # Landing hero section
+│   │   ├── About.jsx           # Homepage About section
+│   │   ├── AboutPage.jsx       # Dedicated /about page
+│   │   ├── Faculty.jsx         # Faculty showcase
+│   │   ├── Events.jsx          # Events with Past/Upcoming tabs
+│   │   ├── Blog.jsx            # Homepage blog teasers
+│   │   ├── BlogsPage.jsx       # Full blogs listing at /blogs
+│   │   ├── BlogSubmissions.jsx # Submissions page at /submissions
+│   │   ├── SubmissionGuidelinesJournal.jsx
+│   │   ├── SubmissionGuidelinesBlog.jsx
+│   │   ├── BoardOfEditors.jsx  # Editorial board page
+│   │   ├── Contact.jsx         # Contact form and info
+│   │   ├── Footer.jsx          # Footer with social links
+│   │   ├── NotFound.jsx        # 404 error page
+│   │   └── ui/                 # Reusable UI components
+│   ├── App.jsx                 # Main routing configuration
 │   ├── App.css
 │   ├── main.jsx
-│   └── index.css
-├── index.html
-├── package.json
-└── vite.config.js
+│   └── index.css               # Global styles and variables
+├── index.html                  # SEO meta tags, Open Graph
+├── vercel.json                 # Deployment config for SPA routing
+├── vite.config.js              # Build optimization, code splitting
+└── package.json
 ```
 
 ## 🎨 Customization
 
-### Changing Colors
-Edit the CSS variables in `src/index.css`:
+### Theme Colors
+Edit CSS variables in `src/index.css`:
 ```css
 :root {
-  --primary: #2563eb;
-  --secondary: #7c3aed;
-  --accent: #f59e0b;
-  /* ... more variables */
+  --page-bg: #FAF0CA;     /* Cream background */
+  --header-bg: #0D3B66;   /* Dark blue */
+  --accent: #0D3B66;      /* Accent color */
+  --dark: #1a1a1a;        /* Text color */
 }
 ```
 
-### Updating Content
-- **College Name**: Update in `Navbar.jsx` and `Footer.jsx`
-- **Programs**: Edit the `programs` array in `Programs.jsx`
-- **Events**: Edit the `events` array in `Events.jsx`
-- **Contact Info**: Update in `Contact.jsx`
+### Content Updates
+- **Events**: Edit `upcomingEvents` and `pastEvents` arrays in `Events.jsx`
+- **Faculty**: Update `facultyMembers` array in `Faculty.jsx`
+- **Blog Posts**: Modify blog data in `BlogsPage.jsx` and `Blog.jsx`
+- **Contact Info**: Update email and address in `Contact.jsx`
+- **Social Links**: Update URLs in `Footer.jsx`
 
-### Adding Images
-Replace the Unsplash URLs in components with your own images.
+### SEO Configuration
+- **Meta Tags**: Update in `index.html` (title, description, Open Graph)
+- **Sitemap**: Update URLs and dates in `public/sitemap.xml`
+- **Canonical URL**: Change domain in `index.html` and sitemap
 
-## 🛠️ Built With
+## 🛠️ Tech Stack
 
-- **React 18** - UI library
-- **Vite** - Build tool and dev server
-- **React Icons** - Icon library
-- **CSS3** - Styling with modern features (Grid, Flexbox, Gradients)
+- **React 18.3.1** - UI library with hooks
+- **React Router DOM 7.10.1** - Client-side routing
+- **Vite 5.4.2** - Fast build tool and dev server
+- **React Icons 5.0.1** - Comprehensive icon library
+- **Lucide React** - Additional modern icons
+- **CSS3** - Modern styling (Grid, Flexbox, Custom Properties)
 - **Google Fonts (Inter)** - Typography
 
-## 📦 Build for Production
+## 📦 Build & Deploy
 
+### Production Build
 ```bash
 npm run build
 ```
 
-The optimized files will be in the `dist/` folder.
+Optimized files will be in the `dist/` folder. Build includes:
+- Code splitting (React vendor: ~174KB, Icons: ~5KB)
+- Minified assets (~262KB total, ~89KB gzipped)
+- Optimized CSS (~43KB)
 
-## 🎯 Key Features Implemented
+### Deployment
+Configured for **Vercel** deployment with SPA routing support via `vercel.json`. Simply:
+```bash
+git push origin main
+```
 
-✅ Responsive navbar with mobile menu  
-✅ Hero section with gradient background and statistics  
-✅ About section with feature cards  
-✅ Programs section with detailed cards  
-✅ Events calendar with category badges  
-✅ Image gallery with hover effects  
-✅ Contact form with validation-ready inputs  
-✅ Footer with social links and newsletter  
-✅ Smooth scrolling navigation  
-✅ Modern button styles with hover animations  
-✅ Card components with shadow and transform effects  
-✅ Mobile-first responsive design  
+Vercel will automatically build and deploy from the main branch.
+
+## 🔍 SEO Features
+
+✅ Comprehensive meta tags (title, description, keywords)  
+✅ Open Graph tags for social media sharing  
+✅ Twitter Card support  
+✅ Sitemap.xml with all 7 routes  
+✅ Robots.txt for search engine crawlers  
+✅ Canonical URLs configured  
+✅ Mobile-responsive viewport meta tags  
+
+## 🎯 Pages & Routes
+
+| Route | Description |
+|-------|-------------|
+| `/` | Homepage with Hero, About, Faculty, Events, Blog, Contact |
+| `/about` | Comprehensive About CALSTAR page |
+| `/blogs` | All blog posts listing |
+| `/submissions` | Blog submission form and guidelines |
+| `/submission-guidelines-journal` | Academic journal submission guidelines |
+| `/submission-guidelines-blog` | Blog post submission guidelines |
+| `/board-of-editors` | Editorial board information |
+| `/*` | 404 Not Found page (catch-all) |
+
+## 📱 Mobile Responsive
+
+All pages include responsive breakpoints:
+- **Desktop**: Full layout (>1024px)
+- **Tablet**: Optimized grid (768px - 1024px)
+- **Mobile**: Single column (<768px)
+
+## 🔐 Content Guidelines
+
+### Blog Submissions
+- **Word Limit**: 1,200-2,000 words
+- **Review Time**: 2-3 weeks
+- **Categories**: Articles, Case Comments, Legislative Notes, Opinions
+
+### Journal Submissions
+- **Word Limit**: 6,000-10,000 words
+- **Review Time**: 8-10 weeks
+- **Categories**: Long Form Articles, Essays, Case Comments, Book Reviews
+
+## 📧 Contact
+
+- **Email**: calstar@mnlumumbai.edu.in
+- **Submissions**: submissions.calstar@mnlumumbai.edu.in
+- **Queries**: queries.calstar@mnlumumbai.edu.in
+- **Social**: @calstar_mnlu (Instagram)
 
 ## 📝 License
 
-Free to use and customize for your college website.
-
-## 🤝 Contributing
-
-Feel free to customize and enhance the website according to your needs!
+© 2025 CALSTAR - Centre for Advanced Legal Studies, Training and Research, Maharashtra National Law University, Mumbai. All rights reserved.
 
 ---
 
-Made with ❤️ for MNLU
+**Director**: Ms. Aastha Tiwari  
+**Established**: 2022  
+**Affiliation**: Maharashtra National Law University, Mumbai
