@@ -18,11 +18,6 @@ const About = memo(() => {
       icon: <FaCalendarAlt />,
       title: 'Events & Public Relations Wing',
       description: 'Oversees external communication, manages correspondence with authorities, and leads promotional outreach. Conceptualizes and organizes workshops, conferences, and symposiums.'
-    },
-    {
-      icon: <FaLightbulb />,
-      title: 'Innovation & Outreach',
-      description: 'Provides consultancy, support, and guidance with a strong focus on social justice and legal awareness through socio-legal outreach programs.'
     }
   ]
 
@@ -33,9 +28,6 @@ const About = memo(() => {
         <p className="section-subtitle">
           The Centre for Advanced Legal Studies, Training and Research at Maharashtra National Law University, Mumbai - Established 2022
         </p>
-        <div className="submissions-teaser" style={{ background: 'var(--accent)', color: 'var(--white)', padding: '1rem 2rem', borderRadius: '8px', textAlign: 'center', margin: '1.5rem auto', maxWidth: '600px', fontWeight: '600', fontSize: '1.1rem' }}>
-          📝 Call for Blogs Open—Submit Today!
-        </div>
 
         <div className="about-content">
           <div className="about-image">
@@ -64,9 +56,9 @@ const About = memo(() => {
         </div>
 
         <h3 className="section-title" style={{ marginTop: '3rem', fontSize: '1.8rem' }}>Our Structure</h3>
-        <p className="section-subtitle">CALSTAR functions through four wings, each focusing on a specific area of contribution and growth</p>
+        <p className="section-subtitle">CALSTAR functions through three wings, each focusing on a specific area of contribution and growth</p>
         
-        <div className="features-grid grid grid-4">
+        <div className="features-grid grid grid-3">
           {wings.map((wing, index) => (
             <div key={index} className="feature-card card">
               <div className="feature-icon">{wing.icon}</div>

@@ -1,12 +1,10 @@
-import React, { memo, useState } from 'react'
-import { FaCalendar, FaMapMarkerAlt, FaClock, FaArrowRight } from 'react-icons/fa'
+import React, { memo } from 'react'
+import { FaCalendar, FaMapMarkerAlt, FaClock } from 'react-icons/fa'
 import './Events.css'
 import InteractiveHoverButton from './ui/interactive-hover-button'
 
 const Events = memo(() => {
-  const [activeTab, setActiveTab] = useState('upcoming')
-
-  const upcomingEvents = [
+  const allEvents = [
     {
       title: 'National Moot Court Competition',
       date: 'March 15-17, 2025',
@@ -128,8 +126,6 @@ const Events = memo(() => {
     return colors[category] || '#6b7280'
   }
 
-  const displayEvents = activeTab === 'upcoming' ? upcomingEvents : pastEvents
-
   return (
     <section className="section events" id="events">
       <div className="container">
@@ -138,23 +134,8 @@ const Events = memo(() => {
           Stay updated with our latest events, workshops, and academic activities
         </p>
 
-        <div className="events-tabs">
-          <button 
-            className={`events-tab ${activeTab === 'upcoming' ? 'active' : ''}`}
-            onClick={() => setActiveTab('upcoming')}
-          >
-            Past & Upcoming Events
-          </button>
-          <button 
-            className={`events-tab ${activeTab === 'past' ? 'active' : ''}`}
-            onClick={() => setActiveTab('past')}
-          >
-            Past Initiatives
-          </button>
-        </div>
-
         <div className="events-grid grid grid-3">
-          {displayEvents.map((event, index) => (
+          {allEvents.map((event, index) => (
             <div key={index} className="event-card card">
               <span 
                 className="event-category" 
@@ -180,11 +161,6 @@ const Events = memo(() => {
                   <span>{event.location}</span>
                 </div>
               </div>
-              {activeTab === 'upcoming' && (
-                <InteractiveHoverButton className="btn btn-secondary event-btn">
-                  Register Now <FaArrowRight />
-                </InteractiveHoverButton>
-              )}
             </div>
           ))}
         </div>

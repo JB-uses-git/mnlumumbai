@@ -84,7 +84,7 @@ const AboutPage = memo(() => {
             <h2 className="about-section-title">Our Structure</h2>
             <div className="about-text">
               <p className="structure-intro">
-                CALSTAR functions through four wings, each focusing on a specific area of contribution and growth:
+                CALSTAR functions through three wings, each focusing on a specific area of contribution and growth:
               </p>
               <div className="wings-grid">
                 {wings.map((wing, index) => (
