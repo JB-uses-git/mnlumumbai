@@ -1,4 +1,4 @@
-import React from 'react'
+import { FaChevronDown } from 'react-icons/fa'
 import './TubelightNavbar.css'
 
 const TubelightNavbar = ({ items = [], activeItem = '' }) => {
@@ -17,18 +17,37 @@ const TubelightNavbar = ({ items = [], activeItem = '' }) => {
 					{items.map((item, idx) => {
 						const Icon = item.icon
 						const isActive = item.name === activeItem
+						const hasDropdown = item.subItems && item.subItems.length > 0
 						return (
-							<button
-								key={idx}
-								className={`tubelight-nav-item ${isActive ? 'active' : ''}`}
-								onClick={item.onClick}
-								type="button"
-								aria-current={isActive ? 'page' : undefined}
-							>
-								{Icon && <Icon className="nav-item-icon" />}
-								<span className="nav-item-text">{item.name}</span>
-								{isActive && <span className="tubelight-lamp" aria-hidden />}
-							</button>
+							<div key={idx} className="tubelight-nav-item-wrapper">
+								<button
+									className={`tubelight-nav-item ${isActive ? 'active' : ''}`}
+									onClick={item.onClick}
+									type="button"
+									aria-current={isActive ? 'page' : undefined}
+								>
+									{Icon && <Icon className="nav-item-icon" />}
+									<span className="nav-item-text">{item.name}</span>
+									{hasDropdown && <FaChevronDown className="nav-item-chevron" />}
+									{isActive && <span className="tubelight-lamp" aria-hidden />}
+								</button>
+								{item.subItems && (
+									<div className="tubelight-dropdown">
+										{item.subItems.map((subItem, subIdx) => (
+											<button
+												key={subIdx}
+												className="tubelight-dropdown-item"
+												onClick={(e) => {
+													e.stopPropagation()
+													subItem.onClick && subItem.onClick()
+												}}
+											>
+												{subItem.name}
+											</button>
+										))}
+									</div>
+								)}
+							</div>
 						)
 					})}
 				</div>

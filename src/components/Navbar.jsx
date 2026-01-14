@@ -8,7 +8,16 @@ const SECTION_CONFIG = [
   { name: 'About', id: 'about', icon: FaInfoCircle, isRoute: true, route: '/about' },
   { name: 'Faculty', id: 'faculty', icon: FaBook },
   { name: 'Events', id: 'events', icon: FaCalendarAlt },
-  { name: 'Blog', id: 'blog', icon: FaBlog },
+  {
+    name: 'Blog',
+    id: 'blog',
+    icon: FaBlog,
+    subItems: [
+      { name: 'Editorial board', isRoute: true, route: '/board-of-editors' },
+      { name: 'Guidelines', isRoute: true, route: '/submission-guidelines-blog' },
+      { name: 'Blogs', isRoute: true, route: '/blogs' }
+    ]
+  },
   { name: 'Contact', id: 'contact', icon: FaEnvelope }
 ]
 
@@ -85,7 +94,11 @@ const Navbar = () => {
     ...SECTION_CONFIG.map((item) => ({
       name: item.name,
       icon: item.icon,
-      onClick: () => handleNavClick(item, item.name)
+      onClick: () => handleNavClick(item, item.name),
+      subItems: item.subItems?.map(sub => ({
+        name: sub.name,
+        onClick: () => handleNavClick(sub, item.name) // Use item name to keep main section active or handle separately
+      }))
     })),
     {
       name: APPLY_ITEM.name,

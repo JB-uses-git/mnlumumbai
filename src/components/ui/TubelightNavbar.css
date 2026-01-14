@@ -21,8 +21,8 @@
 }
 
 .navbar-logo-img {
-  width: 56px;
-  height: 56px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
 }
 
@@ -155,6 +155,7 @@
     opacity: 0;
     transform: scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -176,8 +177,8 @@
   }
 
   .navbar-logo-img {
-    width: 40px;
-    height: 40px;
+    width: 70px;
+    height: 70px;
   }
 
   .navbar-brand-text h2 {
@@ -216,4 +217,72 @@
     bottom: -0.5rem;
     border-radius: 0 0 9999px 9999px;
   }
+}
+
+/* Dropdown Styles */
+.tubelight-nav-item-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.tubelight-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.5rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 1001;
+}
+
+.tubelight-nav-item-wrapper:hover .tubelight-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.tubelight-dropdown-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  color: var(--dark);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tubelight-dropdown-item:hover {
+  background: rgba(11, 102, 195, 0.08);
+  /* accent with low opacity */
+  color: var(--accent);
+}
+
+/* Chevron */
+.nav-item-chevron {
+  font-size: 0.75rem;
+  margin-left: 0.25rem;
+  transition: transform 0.3s ease;
+  opacity: 0.7;
+}
+
+.tubelight-nav-item-wrapper:hover .nav-item-chevron {
+  transform: rotate(180deg);
+  opacity: 1;
+  color: var(--accent);
 }
