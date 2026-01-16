@@ -1,15 +1,29 @@
 .programs {
-  background: var(--page-bg);
+  position: relative;
 }
 
 .programs-grid {
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
+  gap: 2rem;
 }
 
+/* Override default card to be specific for programs if needed, 
+   but rely mostly on global .card */
 .program-card {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  padding: 2.5rem;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.program-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--accent-blue);
 }
 
 .program-header {
@@ -19,86 +33,128 @@
 }
 
 .program-icon {
-  width: 70px;
-  height: 70px;
-  background: linear-gradient(135deg, var(--accent), var(--gray));
-  border-radius: 12px;
+  width: 64px;
+  height: 64px;
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
-  color: var(--bg-dark);
+  font-size: 1.75rem;
+  color: var(--accent-blue);
   flex-shrink: 0;
+}
+
+.program-info {
+  flex: 1;
 }
 
 .program-info h3 {
   font-size: 1.5rem;
-  color: var(--dark);
-  margin-bottom: 0.25rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
 }
 
 .program-duration {
   display: inline-block;
-  padding: 4px 12px;
-  background: var(--accent);
-  color: var(--bg-dark);
-  border-radius: 20px;
+  padding: 6px 14px;
+  background: #f1f5f9;
+  color: var(--text-muted);
+  border-radius: 9999px;
   font-size: 0.85rem;
   font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .program-description {
-  color: var(--gray);
+  color: var(--text-muted);
   line-height: 1.7;
+  font-size: 1.05rem;
 }
 
 .program-highlights {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+  margin-top: auto;
+  /* Push to bottom if needed */
+  padding-top: 1rem;
 }
 
 .highlight-tag {
   padding: 6px 14px;
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--accent);
-  border-radius: 20px;
-  font-size: 0.9rem;
+  background: white;
+  /* Clean look */
+  color: var(--text-muted);
+  border-radius: 9999px;
+  font-size: 0.85rem;
   font-weight: 500;
   border: 1px solid var(--border);
 }
 
 .program-card .btn {
-  margin-top: auto;
+  width: 100%;
+  margin-top: 1.5rem;
 }
 
 .programs-cta {
-  text-align: left;
-  padding: 3rem;
-  background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
-  border-radius: 20px;
-  color: var(--accent);
-  border: 1px solid var(--border);
+  text-align: center;
+  /* Center alignment looks cleaner for large Call to Actions */
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, var(--accent), #1e293b);
+  /* Dark gradient for contrast */
+  border-radius: 24px;
+  /* More rounded */
+  color: white;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+  overflow: hidden;
 }
 
+/* Subtle pattern overlay if desired, or keep clean */
+
 .programs-cta h3 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+  color: white;
 }
 
 .programs-cta p {
-  font-size: 1.125rem;
-  margin-bottom: 2rem;
-  opacity: 0.95;
+  font-size: 1.25rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.programs-cta .btn {
+  background: white;
+  color: var(--accent);
+}
+
+.programs-cta .btn:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
+  .programs-grid {
+    grid-template-columns: 1fr;
+  }
+
   .program-header {
     flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .programs-cta {
+    padding: 2.5rem 1.5rem;
     text-align: left;
   }
 
-  .programs-cta h3 {
-    font-size: 1.5rem;
+  .programs-cta p {
+    margin-left: 0;
   }
 }

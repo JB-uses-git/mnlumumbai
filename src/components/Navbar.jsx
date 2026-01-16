@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { FaHome, FaInfoCircle, FaBook, FaCalendarAlt, FaBlog, FaEnvelope, FaUserGraduate } from 'react-icons/fa'
+import { FaHome, FaInfoCircle, FaBook, FaCalendarAlt, FaBlog, FaEnvelope } from 'react-icons/fa'
 import TubelightNavbar from './ui/TubelightNavbar'
 
 const SECTION_CONFIG = [
   { name: 'Home', id: 'home', icon: FaHome },
-  { name: 'About', id: 'about', icon: FaInfoCircle, isRoute: true, route: '/about' },
+  { name: 'About', id: 'about', icon: FaInfoCircle },
+
   { name: 'Faculty', id: 'faculty', icon: FaBook },
   { name: 'Events', id: 'events', icon: FaCalendarAlt },
   {
@@ -21,7 +22,7 @@ const SECTION_CONFIG = [
   { name: 'Contact', id: 'contact', icon: FaEnvelope }
 ]
 
-const APPLY_ITEM = { name: 'Apply Now', icon: FaUserGraduate, targetId: 'contact' }
+
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState(SECTION_CONFIG[0].name)
@@ -99,12 +100,7 @@ const Navbar = () => {
         name: sub.name,
         onClick: () => handleNavClick(sub, item.name) // Use item name to keep main section active or handle separately
       }))
-    })),
-    {
-      name: APPLY_ITEM.name,
-      icon: APPLY_ITEM.icon,
-      onClick: () => handleNavClick({ id: APPLY_ITEM.targetId }, SECTION_CONFIG[SECTION_CONFIG.length - 1].name)
-    }
+    }))
   ]
 
   return <TubelightNavbar items={navItems} activeItem={activeSection} />

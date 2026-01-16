@@ -1,60 +1,51 @@
 import React from 'react'
-import { FaArrowRight } from 'react-icons/fa'
-import './Hero.css'
-import InteractiveHoverButton from './ui/interactive-hover-button'
-import AnimatedHero from './ui/AnimatedHero'
+import HeroSection from './ui/hero-section'
+import { BookOpen, Users, Gavel } from 'lucide-react'
 
 const Hero = () => {
+  const heroData = {
+    title: (
+      <>
+        Centre for <br />
+        <span className="text-primary">Advanced Legal Studies</span>
+      </>
+    ),
+    subtitle: 'Training and Research (CALSTAR) at Maharashtra National Law University, Mumbai.',
+    actions: [
+      {
+        text: 'Explore Research',
+        onClick: () => document.getElementById('programs')?.scrollIntoView({ behavior: 'smooth' }),
+        variant: 'default',
+      },
+      {
+        text: 'Our Vision',
+        onClick: () => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }),
+        variant: 'outline',
+      },
+    ],
+    // User requested to remove the specific stats "5+ Research Areas...", so we can either provide empty or better ones.
+    // The design looks better with stats, so let's use relevant generic icons or hide them if preferred.
+    // I'll comment them out to respect "remove this" explicitly.
+    stats: [],
+    images: [
+      'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=2000', // Law library / Abstract
+      'https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=2000', // Students
+      'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=2000', // Handshake/Collaboration
+    ],
+  };
+
   return (
-    <section className="hero" id="home">
-      <div className="hero-overlay"></div>
-      <div className="container hero-content">
-        <div className="hero-text fade-in-up">
-          <span 
-  className="hero-badge"
-  style={{ 
-    fontSize: '1.5rem',
-    fontWeight: '600',
-    marginLeft: '-40px',
-    display: 'inline-flex',
-    alignItems: 'center',
-    gap: '10px'
-  }}
->
-  🎓 Maharashtra National Law University, Mumbai
-</span>
-          <h1 className="hero-title">
-            Centre for <br />
-            <span className="gradient-text">Advanced Legal Studies, Training and Research</span>
-          </h1>
-          <h2 style={{ 
-            fontSize: '3rem', 
-            fontWeight: '800', 
-            color: 'var(--accent)', 
-            marginTop: '1rem',
-            letterSpacing: '0.15em',
-            fontFamily: 'Inter, sans-serif',
-            textTransform: 'uppercase'
-          }}>
-            CALSTAR
-          </h2>
-          {/* Animated phrase inserted under the title */}
-          <div style={{ marginTop: '8px' }}>
-            <AnimatedHero words={["Empowering Students", "Advancing Research", "Shaping Legal Discourse"]} interval={2200} />
-          </div>
-          <p className="hero-description">
-            Empowering students and researchers to explore, learn, and produce impactful legal work that influences thought and practice in society.
-          </p>
-          <div className="hero-buttons">
-            <InteractiveHoverButton className="btn btn-primary">
-              Explore Our Research <FaArrowRight />
-            </InteractiveHoverButton>
-          </div>
-          {/* hero stats removed per request */}
-        </div>
-      </div>
-    </section>
+    <div className="w-full bg-background" id="home">
+      <HeroSection
+        title={heroData.title}
+        subtitle={heroData.subtitle}
+        actions={heroData.actions}
+        stats={heroData.stats}
+        images={heroData.images}
+      />
+    </div>
   )
 }
 
 export default Hero
+
