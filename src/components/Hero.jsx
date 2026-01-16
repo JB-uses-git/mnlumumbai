@@ -1,16 +1,16 @@
 import React from 'react'
 import HeroSection from './ui/hero-section'
 import { BookOpen, Users, Gavel } from 'lucide-react'
+import AnimatedHero from './ui/AnimatedHero'
 
 const Hero = () => {
   const heroData = {
     title: (
-      <>
-        Centre for <br />
-        <span className="text-primary">Advanced Legal Studies</span>
-      </>
+      <div className="flex justify-center lg:justify-start">
+        <AnimatedHero words={['Empowering Students', 'Advancing Research', 'Shaping Discourse']} interval={2500} />
+      </div>
     ),
-    subtitle: 'Training and Research (CALSTAR) at Maharashtra National Law University, Mumbai.',
+    subtitle: 'Centre for Advanced Legal Studies, Training and Research (CALSTAR) at MNLU Mumbai.',
     actions: [
       {
         text: 'Explore Research',
