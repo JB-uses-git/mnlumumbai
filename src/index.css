@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --background: 46 100% 85%;
-    /* Buttermilk #FFF1B5 -> roughly 46deg 100% 85% HSL */
+    --background: 48 67% 98%;
+    /* Smooth off-white #FEFDF5 */
     --foreground: 7 18% 22%;
     /* Old Burgundy #43302E -> roughly 7deg 18% 22% */
 
@@ -70,8 +70,8 @@
   --accent: var(--color-buttermilk);
 
   /* Backgrounds: Clean & Elegant */
-  --bg-body: #ffffff;
-  /* Pure white start */
+  --bg-body: #FEFDF5;
+  /* Smooth off-white light yellow tone */
   --bg-subtle: var(--cream-light);
   /* Very subtle warm tint */
   --bg-card: #ffffff;

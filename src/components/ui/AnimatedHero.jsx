@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './AnimatedHero.css'
 
-const AnimatedHero = ({ words = ['Legal Studies', 'Training', 'Research'], interval = 2200 }) => {
+const AnimatedHero = ({ text = "", words = ['Legal Studies', 'Training', 'Research'], interval = 2200 }) => {
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
@@ -13,7 +13,7 @@ const AnimatedHero = ({ words = ['Legal Studies', 'Training', 'Research'], inter
 
   return (
     <span className="animated-hero" aria-hidden="false">
-      <span className="ah-prefix">Centre for Advanced&nbsp;</span>
+      {text && <span className="ah-prefix">{text}&nbsp;</span>}
 
       <span className="ah-words" aria-live="polite">
         {/* translate by (index * 100/words.length)% so each step moves by one word */}

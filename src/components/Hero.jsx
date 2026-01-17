@@ -7,22 +7,11 @@ const Hero = () => {
   const heroData = {
     title: (
       <div className="flex justify-center lg:justify-start">
-        <AnimatedHero words={['Empowering Students', 'Advancing Research', 'Shaping Discourse']} interval={2500} />
+        <AnimatedHero text="" words={['Empowering Future Jurists', 'Advancing Legal Research', 'Shaping Policy Discourse']} interval={2500} />
       </div>
     ),
     subtitle: 'Centre for Advanced Legal Studies, Training and Research (CALSTAR) at MNLU Mumbai.',
-    actions: [
-      {
-        text: 'Explore Research',
-        onClick: () => document.getElementById('programs')?.scrollIntoView({ behavior: 'smooth' }),
-        variant: 'default',
-      },
-      {
-        text: 'Our Vision',
-        onClick: () => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }),
-        variant: 'outline',
-      },
-    ],
+    actions: [],
     // User requested to remove the specific stats "5+ Research Areas...", so we can either provide empty or better ones.
     // The design looks better with stats, so let's use relevant generic icons or hide them if preferred.
     // I'll comment them out to respect "remove this" explicitly.
