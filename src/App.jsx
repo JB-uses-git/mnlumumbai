@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import Faculty from './components/Faculty'
+import BoardOfDirectors from './components/BoardOfDirectors'
 import Events from './components/Events'
 import Blog from './components/Blog'
 import Contact from './components/Contact'
@@ -25,6 +26,7 @@ function MainPage() {
       <Hero />
       <About />
       <Faculty />
+      <BoardOfDirectors />
       <Events />
       <Blog />
       <Contact />

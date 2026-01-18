@@ -1,0 +1,25 @@
+.bod {
+    background: var(--page-bg);
+    padding: 40px 0;
+}
+
+/* Pause animation on hover */
+.animate-scroll:hover,
+.animate-scroll-reverse:hover {
+    animation-play-state: paused;
+}
+
+/* Ensure smooth scrolling container */
+.bod .container {
+    overflow: hidden;
+}
+
+/* Optional: hide scrollbar if any */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
