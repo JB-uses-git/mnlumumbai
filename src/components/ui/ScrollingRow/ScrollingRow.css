@@ -1,0 +1,4 @@
+.animate-scroll:hover,
+.animate-scroll-reverse:hover {
+    animation-play-state: paused;
+}

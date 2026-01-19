@@ -54,7 +54,7 @@ const HeroSection = ({ title, subtitle, actions, stats, images, className }) => 
             <div className="container mx-auto grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-8">
                 {/* Left Column: Text Content */}
                 <motion.div
-                    className="flex flex-col items-center text-center lg:items-start lg:text-left"
+                    className="flex flex-col items-center text-center lg:items-start lg:text-justify"
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"

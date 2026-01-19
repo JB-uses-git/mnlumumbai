@@ -67,7 +67,7 @@
 
 .about-text {
   /* left-align text under the image; match the site's container/gutter */
-  text-align: left;
+  text-align: justify;
   max-width: 900px;
   margin: 0;
 }
@@ -82,7 +82,7 @@
 }
 
 .feature-card {
-  text-align: left;
+  text-align: justify;
   padding: 2.5rem 1.5rem;
 }
 

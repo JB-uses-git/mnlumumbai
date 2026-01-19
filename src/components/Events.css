@@ -97,7 +97,7 @@
 }
 
 .events-footer {
-  text-align: left;
+  text-align: justify;
 }
 
 @media (max-width: 768px) {

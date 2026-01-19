@@ -3,7 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import './BoardOfDirectors.css'
 
 const bodMembers = [
-    { id: 1, name: 'Director Name 1', image: 'https://placehold.co/400', title: 'Board Member', initials: 'D1' },
+    { id: 1, name: 'Jalad', image: 'https://placehold.co/400', title: 'Board Member', initials: 'D1' },
     { id: 2, name: 'Director Name 2', image: 'https://placehold.co/400', title: 'Board Member', initials: 'D2' },
     { id: 3, name: 'Director Name 3', image: 'https://placehold.co/400', title: 'Board Member', initials: 'D3' },
     { id: 4, name: 'Director Name 4', image: 'https://placehold.co/400', title: 'Board Member', initials: 'D4' },
@@ -33,7 +33,7 @@ const ScrollingRow = ({ people, reverse = false }) => {
                                 {person.initials}
                             </AvatarFallback>
                         </Avatar>
-                        <div className="flex flex-col text-left">
+                        <div className="flex flex-col text-justify">
                             <span className="text-primary font-medium text-base whitespace-nowrap">
                                 {person.name}
                             </span>

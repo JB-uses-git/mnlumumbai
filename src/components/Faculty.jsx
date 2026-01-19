@@ -5,44 +5,44 @@ import EditorialTestimonial from './ui/EditorialTestimonial'
 const Faculty = memo(() => {
   const facultyMembers = [
     {
-      name: 'Suraj Sir',
-      image: '/images/faculty/IMG_8815.JPG',
-      title: ''
+      name: 'Mr. Suraj Karande',
+      image: '/images/faculty/1777.jpeg',
+      title: 'Assistant Professor of Economics'
     },
     {
-      name: 'Aastha Ma\'am',
+      name: 'Ms. Aastha Tiwari',
       image: '/images/faculty/1728539134550.jpeg',
-      title: 'Director, CALSTAR'
+      title: 'Assistant Professor'
     },
     {
-      name: 'Shweta Ma\'am',
+      name: 'Ms. Shweta Bhuyan',
       image: '/images/faculty/1740245639117.jpeg',
-      title: ''
+      title: 'Research Assistant'
     }
   ]
 
   const testimonials = [
     {
       id: 1,
-      quote: "Suraj Sir's expertise in corporate law and his passion for research make him an invaluable asset to our institution and students.",
-      author: "Suraj Sir",
-      role: "Assistant Professor",
+      quote: "Mr. Suraj Karande's expertise in corporate law and his passion for research make him an invaluable asset to our institution and students.",
+      author: "Mr. Suraj Karande",
+      role: "Assistant Professor of Economics",
       company: "Corporate Law",
-      image: "/images/faculty/IMG_8815.JPG",
+      image: "/images/faculty/1777.jpeg",
     },
     {
       id: 2,
-      quote: "Under the distinguished guidance of Aastha Ma'am, CALSTAR contributes to the expanding field of legal scholarship and promotes socially relevant legal education.",
-      author: "Aastha Ma'am",
-      role: "Director, CALSTAR",
+      quote: "Under the distinguished guidance of Ms. Aastha Tiwari, CALSTAR contributes to the expanding field of legal scholarship and promotes socially relevant legal education.",
+      author: "Ms. Aastha Tiwari",
+      role: "Assistant Professor",
       company: "Constitutional Law",
       image: "/images/faculty/1728539134550.jpeg",
     },
     {
       id: 3,
-      quote: "Shweta Ma'am brings a perfect blend of academic rigor and practical insights. Her mentorship has shaped countless successful legal careers.",
-      author: "Shweta Ma'am",
-      role: "Associate Professor",
+      quote: "Shweta Bhuyan brings a perfect blend of academic rigor and practical insights. Her mentorship has shaped countless successful legal careers.",
+      author: "Ms. Shweta Bhuyan",
+      role: "Research Assistant",
       company: "Criminal Law",
       image: "/images/faculty/1740245639117.jpeg",
     },
@@ -60,8 +60,8 @@ const Faculty = memo(() => {
           {facultyMembers.map((faculty, index) => (
             <div key={index} className="faculty-card">
               <div className="faculty-image-wrapper">
-                <img 
-                  src={faculty.image} 
+                <img
+                  src={faculty.image}
                   alt={faculty.name}
                   className="faculty-image"
                   loading="lazy"

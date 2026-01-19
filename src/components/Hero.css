@@ -165,7 +165,7 @@
 @media (max-width: 900px) {
   .hero {
     padding-top: 140px;
-    text-align: left;
+    text-align: justify;
   }
 
   .hero-title {
