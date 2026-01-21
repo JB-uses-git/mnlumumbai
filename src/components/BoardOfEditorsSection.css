@@ -1,4 +1,4 @@
-.bod {
+.board-of-editors-section {
     background: var(--page-bg);
     padding: 40px 0;
 }
@@ -10,7 +10,7 @@
 }
 
 /* Ensure smooth scrolling container */
-.bod .container {
+.board-of-editors-section .container {
     overflow: hidden;
 }
 

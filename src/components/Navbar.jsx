@@ -8,7 +8,7 @@ const SECTION_CONFIG = [
   { name: 'About', id: 'about', icon: FaInfoCircle },
 
   { name: 'Faculty', id: 'faculty', icon: FaBook },
-  { name: 'BOD', id: 'bod', icon: FaBook },
+
   { name: 'Events', id: 'events', icon: FaCalendarAlt },
   {
     name: 'Blog',

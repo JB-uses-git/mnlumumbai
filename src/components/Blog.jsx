@@ -2,10 +2,11 @@ import React, { memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './Blog.css'
 import InteractiveHoverButton from './ui/interactive-hover-button'
+import BoardOfEditorsContent from './BoardOfEditorsContent'
 
 const Blog = memo(() => {
   const navigate = useNavigate()
-  
+
   const blogs = [
     {
       id: 1,
@@ -75,13 +76,15 @@ const Blog = memo(() => {
         </div>
 
         <div className="blog-footer">
-          <InteractiveHoverButton 
+          <InteractiveHoverButton
             className="btn btn-primary"
             onClick={() => navigate('/blogs')}
           >
             View All Blogs
           </InteractiveHoverButton>
         </div>
+
+        <BoardOfEditorsContent />
       </div>
     </section>
   )

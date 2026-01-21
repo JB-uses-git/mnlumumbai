@@ -1,0 +1,25 @@
+.board-of-editors-content {
+    /* No defined background here, transparent to blend with blog */
+    padding: 20px 0;
+}
+
+/* Pause animation on hover */
+.animate-scroll:hover,
+.animate-scroll-reverse:hover {
+    animation-play-state: paused;
+}
+
+/* Ensure smooth scrolling container */
+.board-of-editors-content .container {
+    overflow: hidden;
+}
+
+/* Optional: hide scrollbar if any */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

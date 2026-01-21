@@ -1,14 +1,14 @@
 import React, { memo } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import './BoardOfDirectors.css'
+import './BoardOfEditorsSection.css'
 
-const bodMembers = [
-    { id: 1, name: 'Jalad', image: 'https://placehold.co/400', title: 'Board Member', initials: 'D1' },
-    { id: 2, name: 'Director Name 2', image: 'https://placehold.co/400', title: 'Board Member', initials: 'D2' },
-    { id: 3, name: 'Director Name 3', image: 'https://placehold.co/400', title: 'Board Member', initials: 'D3' },
-    { id: 4, name: 'Director Name 4', image: 'https://placehold.co/400', title: 'Board Member', initials: 'D4' },
-    { id: 5, name: 'Director Name 5', image: 'https://placehold.co/400', title: 'Board Member', initials: 'D5' },
-    { id: 6, name: 'Director Name 6', image: 'https://placehold.co/400', title: 'Board Member', initials: 'D6' },
+const editorMembers = [
+    { id: 1, name: 'Jalad', image: 'https://placehold.co/400', title: 'Editor', initials: 'E1' },
+    { id: 2, name: 'Editor Name 2', image: 'https://placehold.co/400', title: 'Editor', initials: 'E2' },
+    { id: 3, name: 'Editor Name 3', image: 'https://placehold.co/400', title: 'Editor', initials: 'E3' },
+    { id: 4, name: 'Editor Name 4', image: 'https://placehold.co/400', title: 'Editor', initials: 'E4' },
+    { id: 5, name: 'Editor Name 5', image: 'https://placehold.co/400', title: 'Editor', initials: 'E5' },
+    { id: 6, name: 'Editor Name 6', image: 'https://placehold.co/400', title: 'Editor', initials: 'E6' },
 ]
 
 const ScrollingRow = ({ people, reverse = false }) => {
@@ -48,27 +48,27 @@ const ScrollingRow = ({ people, reverse = false }) => {
     )
 }
 
-const BoardOfDirectors = memo(() => {
+const BoardOfEditorsSection = memo(() => {
     return (
-        <section className="section bod" id="bod" style={{ background: 'var(--page-bg)' }}>
+        <section className="section board-of-editors-section" id="board-of-editors-section" style={{ background: 'var(--page-bg)' }}>
             <div className="container">
-                <h2 className="section-title">Board of Directors</h2>
+                <h2 className="section-title">Board of Editors</h2>
                 <p className="section-subtitle">
-                    Meet our distinguished Board of Directors
+                    Meet our distinguished Board of Editors
                 </p>
 
                 <div className="space-y-6 overflow-hidden">
-                    <ScrollingRow people={bodMembers} />
-                    {/* <ScrollingRow people={bodMembers} reverse /> */}
+                    <ScrollingRow people={editorMembers} />
+                    {/* <ScrollingRow people={editorMembers} reverse /> */}
                     {/* Duplicating row for effect if needed, but 1 row might be enough for 3-6 members. 
               If user wants 'grid' replacement, maybe just one row or two. 
               I found 6 placeholders. I'll split them if I had more. 
               For now just one lively row or two identical ones moving opposite. */}
-                    <ScrollingRow people={bodMembers} reverse />
+                    <ScrollingRow people={editorMembers} reverse />
                 </div>
             </div>
         </section>
     )
 })
 
-export default BoardOfDirectors
+export default BoardOfEditorsSection

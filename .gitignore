@@ -34,3 +34,4 @@ pnpm-debug.log*
 # Optimized images (generated)
 # Optimized images (generated)
 # public/images/optimized/  <-- kept locally but committed to repo so Vercel can serve them
+src\components\ui\ScrollingRow
