@@ -23,3 +23,9 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
+/* Slow down the animation specifically for this component */
+.board-of-editors-content .animate-scroll,
+.board-of-editors-content .animate-scroll-reverse {
+    animation-duration: 80s;
+}

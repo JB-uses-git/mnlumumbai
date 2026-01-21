@@ -84,9 +84,9 @@ const Blog = memo(() => {
           </InteractiveHoverButton>
         </div>
 
-        <BoardOfEditorsContent />
       </div>
-    </section>
+      <BoardOfEditorsContent />
+    </section >
   )
 })
 
