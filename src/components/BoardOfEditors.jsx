@@ -10,6 +10,13 @@ const BoardOfEditors = memo(() => {
   // Group board members by role
   const boardGroups = [
     {
+      title: 'Peer Reviewers',
+      members: [
+        { name: 'Ms. Aastha Tiwari', affiliation: '', image: '/images/faculty/1728539134550.jpeg' },
+        { name: 'Mr. Suraj Karande', affiliation: '', image: '/images/faculty/1777.jpeg' },
+      ]
+    },
+    {
       title: 'Editors-in-Chief',
       members: [
         { name: 'Om Chandak', affiliation: 'MNLU Mumbai', image: '/images/calstar board/Om Chandak- ASSOCIATE CONVENOR.jpg' },
@@ -34,8 +41,6 @@ const BoardOfEditors = memo(() => {
       title: 'Content Editors',
       members: [
         { name: 'Ravi Hrudya', affiliation: '', image: '/images/calstar board/pic - Ravi Hrudya-M-R.jpeg' },
-        { name: 'Rashi Nayak', affiliation: '', image: null }, // Duplicate name, already assigned to Managing Editor
-        { name: 'Radhika Agrawal', affiliation: '', image: null }, // Duplicate name
         { name: 'Astha Tamgade', affiliation: '', image: '/images/calstar board/ASTHA TAMGADE- H- PR.jpeg' },
         { name: 'Sanskar Chandak', affiliation: '', image: '/images/calstar board/Sanskar Chandak- M- R.jpeg' },
       ]
@@ -52,13 +57,6 @@ const BoardOfEditors = memo(() => {
         { name: 'Divija Manaktala', affiliation: '', image: '/images/calstar board/Divija Manaktala- M- R.jpeg' },
         { name: 'Vaishnavi Tyagi', affiliation: '', image: '/images/calstar board/Vaishnavi Tyagi- M-R.jpg' },
         { name: 'Siddhi Bhosale', affiliation: '', image: '/images/calstar board/Siddhi Bhosale- M- P.jpg' },
-      ]
-    },
-    {
-      title: 'Peer Reviewers',
-      members: [
-        { name: 'Aastha ma’am', affiliation: '', image: null },
-        { name: 'Suraj sir', affiliation: '', image: null },
       ]
     }
   ]
