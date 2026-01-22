@@ -37,7 +37,8 @@
   gap: 0.75rem;
 }
 
-.home-btn, .back-btn {
+.home-btn,
+.back-btn {
   background: var(--accent);
   border: none;
   color: var(--white);
@@ -52,7 +53,8 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.home-btn:hover, .back-btn:hover {
+.home-btn:hover,
+.back-btn:hover {
   background: var(--dark);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
@@ -116,12 +118,41 @@
   margin: 0;
 }
 
+/* Board Members Groups */
+.board-groups-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-bottom: 3rem;
+}
+
+.board-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.group-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 2rem;
+  text-align: center;
+  /* or left if preferred, but center matches hero */
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  align-self: flex-start;
+  /* Title on left */
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 0.5rem;
+}
+
 /* Board Members Grid */
 .board-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2.5rem;
-  margin-bottom: 3rem;
+  /* margin-bottom removed as it's handled by gap in container */
 }
 
 .board-member-card {

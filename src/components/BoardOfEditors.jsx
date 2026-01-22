@@ -7,31 +7,59 @@ import Footer from './Footer'
 const BoardOfEditors = memo(() => {
   const navigate = useNavigate()
 
-  // Placeholder for board members - to be updated with actual data
-  const boardMembers = [
+  // Group board members by role
+  const boardGroups = [
     {
-      name: 'To Be Updated',
-      role: 'Chairperson',
-      affiliation: 'MNLU Mumbai',
-      image: null
+      title: 'Editors-in-Chief',
+      members: [
+        { name: 'Om Chandak', affiliation: 'MNLU Mumbai', image: '/images/calstar board/Om Chandak- ASSOCIATE CONVENOR.jpg' },
+        { name: 'Revant Sinha', affiliation: 'MNLU Mumbai', image: '/images/calstar board/Screenshot_20250913_180357 - Revant Sinha-M-P.jpg' },
+      ]
     },
     {
-      name: 'To Be Updated',
-      role: 'Faculty Editor',
-      affiliation: 'MNLU Mumbai',
-      image: null
+      title: 'Advisors',
+      members: [
+        { name: 'Yashvardhan Kshirsagar', affiliation: '', image: '/images/calstar board/yashwardhan kshirsagar- CONVENOR.png' },
+        { name: 'Parth', affiliation: '', image: null },
+      ]
     },
     {
-      name: 'To Be Updated',
-      role: 'Faculty Editor',
-      affiliation: 'MNLU Mumbai',
-      image: null
+      title: 'Managing Editors',
+      members: [
+        { name: 'Rashi Nayak', affiliation: '', image: '/images/calstar board/Rashi Nayak- HEAD- R.jpg' },
+        { name: 'Radhika Agrawal', affiliation: '', image: '/images/calstar board/RADHIKA AGRAWAL- HEAD- P.jpeg' },
+      ]
     },
     {
-      name: 'To Be Updated',
-      role: 'External Advisor',
-      affiliation: 'Legal Practitioner',
-      image: null
+      title: 'Content Editors',
+      members: [
+        { name: 'Ravi Hrudya', affiliation: '', image: '/images/calstar board/pic - Ravi Hrudya-M-R.jpeg' },
+        { name: 'Rashi Nayak', affiliation: '', image: null }, // Duplicate name, already assigned to Managing Editor
+        { name: 'Radhika Agrawal', affiliation: '', image: null }, // Duplicate name
+        { name: 'Astha Tamgade', affiliation: '', image: '/images/calstar board/ASTHA TAMGADE- H- PR.jpeg' },
+        { name: 'Sanskar Chandak', affiliation: '', image: '/images/calstar board/Sanskar Chandak- M- R.jpeg' },
+      ]
+    },
+    {
+      title: 'Technical Editors',
+      members: [
+        { name: 'Yashika Paraswani', affiliation: '', image: '/images/calstar board/YASHIKA PARASWANI- M- P.jpg' },
+        { name: 'Rishith Garg', affiliation: '', image: '/images/calstar board/rgarg horse - RISHITH GARG- M- PR.png' },
+        { name: 'Rajnandini Pawar', affiliation: '', image: '/images/calstar board/RAJNANDINI PAWAR- M- R.jpg' },
+        { name: 'Anamika Jaiswal', affiliation: '', image: '/images/calstar board/semi formal phoro  - Anamika Jaiswal-M-R.jpg' },
+        { name: 'Shubhi Gupta', affiliation: '', image: '/images/calstar board/Shubhi Gupta- M- R.jpg' },
+        { name: 'Madhura Vedang', affiliation: '', image: '/images/calstar board/Madhura Vedang- M- R.jpg' },
+        { name: 'Divija Manaktala', affiliation: '', image: '/images/calstar board/Divija Manaktala- M- R.jpeg' },
+        { name: 'Vaishnavi Tyagi', affiliation: '', image: '/images/calstar board/Vaishnavi Tyagi- M-R.jpg' },
+        { name: 'Siddhi Bhosale', affiliation: '', image: '/images/calstar board/Siddhi Bhosale- M- P.jpg' },
+      ]
+    },
+    {
+      title: 'Peer Reviewers',
+      members: [
+        { name: 'Aastha ma’am', affiliation: '', image: null },
+        { name: 'Suraj sir', affiliation: '', image: null },
+      ]
     }
   ]
 
@@ -65,7 +93,7 @@ const BoardOfEditors = memo(() => {
       {/* Main Content */}
       <section className="board-content">
         <div className="container">
-          
+
           <div className="board-intro">
             <div className="intro-icon">
               <FaUserTie />
@@ -75,22 +103,29 @@ const BoardOfEditors = memo(() => {
             </p>
           </div>
 
-          {/* Board Members Grid */}
-          <div className="board-grid">
-            {boardMembers.map((member, index) => (
-              <div key={index} className="board-member-card">
-                <div className="member-image-wrapper">
-                  {member.image ? (
-                    <img src={member.image} alt={member.name} className="member-image" />
-                  ) : (
-                    <div className="member-placeholder">
-                      <FaUserTie />
+          {/* Board Members Groups */}
+          <div className="board-groups-container">
+            {boardGroups.map((group, groupIndex) => (
+              <div key={groupIndex} className="board-group">
+                <h2 className="group-title">{group.title}</h2>
+                <div className="board-grid">
+                  {group.members.map((member, index) => (
+                    <div key={index} className="board-member-card">
+                      <div className="member-image-wrapper">
+                        {member.image ? (
+                          <img src={member.image} alt={member.name} className="member-image" />
+                        ) : (
+                          <div className="member-placeholder">
+                            <FaUserTie />
+                          </div>
+                        )}
+                      </div>
+                      <h3 className="member-name">{member.name}</h3>
+                      <p className="member-role">{group.title.endsWith('s') ? group.title.slice(0, -1) : group.title}</p>
+                      {member.affiliation && <p className="member-affiliation">{member.affiliation}</p>}
                     </div>
-                  )}
+                  ))}
                 </div>
-                <h3 className="member-name">{member.name}</h3>
-                <p className="member-role">{member.role}</p>
-                <p className="member-affiliation">{member.affiliation}</p>
               </div>
             ))}
           </div>
