@@ -27,7 +27,7 @@ const Faculty = memo(() => {
       quote: "Mr. Suraj Karande's expertise in corporate law and his passion for research make him an invaluable asset to our institution and students.",
       author: "Mr. Suraj Karande",
       role: "Assistant Professor of Economics",
-      company: "Corporate Law",
+      company: "Economics",
       image: "/images/faculty/1777.jpeg",
     },
     {
@@ -35,7 +35,7 @@ const Faculty = memo(() => {
       quote: "Under the distinguished guidance of Ms. Aastha Tiwari, CALSTAR contributes to the expanding field of legal scholarship and promotes socially relevant legal education.",
       author: "Ms. Aastha Tiwari",
       role: "Assistant Professor",
-      company: "Constitutional Law",
+      company: "AI and Tech Law",
       image: "/images/faculty/1728539134550.jpeg",
     },
     {
@@ -43,7 +43,7 @@ const Faculty = memo(() => {
       quote: "Shweta Bhuyan brings a perfect blend of academic rigor and practical insights. Her mentorship has shaped countless successful legal careers.",
       author: "Ms. Shweta Bhuyan",
       role: "Research Assistant",
-      company: "Criminal Law",
+      company: "",
       image: "/images/faculty/1740245639117.jpeg",
     },
   ]

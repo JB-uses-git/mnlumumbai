@@ -16,43 +16,43 @@ const getInitials = (name) => {
 
 // Data Definition
 const peerReviewers = [
-    { name: 'Aastha ma’am', title: 'Peer Review' },
-    { name: 'Suraj sir', title: 'Peer Review' },
+    { name: 'Ms. Aastha Tiwari', title: 'Peer Review', image: '/images/faculty/1728539134550.jpeg' },
+    { name: 'Mr. Suraj Karande', title: 'Peer Review', image: '/images/faculty/1777.jpeg' },
 ]
 
 const eicMembers = [
-    { name: 'Om', title: 'Editor-in-Chief' },
-    { name: 'Revant', title: 'Editor-in-Chief' },
+    { name: 'Om', title: 'Editor-in-Chief', image: '/images/calstar board/Om Chandak- ASSOCIATE CONVENOR.jpg' },
+    { name: 'Revant', title: 'Editor-in-Chief', image: '/images/calstar board/Screenshot_20250913_180357 - Revant Sinha-M-P.jpg' },
 ]
 
 const advisors = [
-    { name: 'Yashvardhan', title: 'Advisor' },
-    { name: 'Parth', title: 'Advisor' },
+    { name: 'Yashvardhan', title: 'Advisor', image: '/images/calstar board/yashwardhan kshirsagar- CONVENOR.png' },
+    { name: 'Parth', title: 'Advisor', image: null },
 ]
 
 const managingEditors = [
-    { name: 'Rashi', title: 'Managing Editor' },
-    { name: 'Radhika', title: 'Managing Editor' },
+    { name: 'Rashi', title: 'Managing Editor', image: '/images/calstar board/Rashi Nayak- HEAD- R.jpg' },
+    { name: 'Radhika', title: 'Managing Editor', image: '/images/calstar board/RADHIKA AGRAWAL- HEAD- P.jpeg' },
 ]
 
 const contentEditors = [
-    { name: 'Hrudya', title: 'Content Editor' },
-    { name: 'Rashi', title: 'Content Editor' },
-    { name: 'Radhika', title: 'Content Editor' },
-    { name: 'Astha', title: 'Content Editor' },
-    { name: 'Sanskar', title: 'Content Editor' },
+    { name: 'Hrudya', title: 'Content Editor', image: '/images/calstar board/pic - Ravi Hrudya-M-R.jpeg' },
+    { name: 'Rashi', title: 'Content Editor', image: null }, // Assuming duplication or diff person, keeping null if not sure. Mentions "Rashi" in ME above.
+    { name: 'Radhika', title: 'Content Editor', image: null }, // Same.
+    { name: 'Astha', title: 'Content Editor', image: '/images/calstar board/ASTHA TAMGADE- H- PR.jpeg' },
+    { name: 'Sanskar', title: 'Content Editor', image: '/images/calstar board/Sanskar Chandak- M- R.jpeg' },
 ]
 
 const technicalEditors = [
-    { name: 'Yashika', title: 'Technical Editor' },
-    { name: 'Rishit', title: 'Technical Editor' },
-    { name: 'Rajnandini', title: 'Technical Editor' },
-    { name: 'Anamika', title: 'Technical Editor' },
-    { name: 'Shubhi', title: 'Technical Editor' },
-    { name: 'Madhura', title: 'Technical Editor' },
-    { name: 'Divija', title: 'Technical Editor' },
-    { name: 'Vaishnavi', title: 'Technical Editor' },
-    { name: 'Siddhi B.', title: 'Technical Editor' },
+    { name: 'Yashika', title: 'Technical Editor', image: '/images/calstar board/YASHIKA PARASWANI- M- P.jpg' },
+    { name: 'Rishith', title: 'Technical Editor', image: '/images/calstar board/rgarg horse - RISHITH GARG- M- PR.png' },
+    { name: 'Rajnandini', title: 'Technical Editor', image: '/images/calstar board/RAJNANDINI PAWAR- M- R.jpg' },
+    { name: 'Anamika', title: 'Technical Editor', image: '/images/calstar board/semi formal phoro  - Anamika Jaiswal-M-R.jpg' },
+    { name: 'Shubhi', title: 'Technical Editor', image: '/images/calstar board/Shubhi Gupta- M- R.jpg' },
+    { name: 'Madhura', title: 'Technical Editor', image: '/images/calstar board/Madhura Vedang- M- R.jpg' },
+    { name: 'Divija', title: 'Technical Editor', image: '/images/calstar board/Divija Manaktala- M- R.jpeg' },
+    { name: 'Vaishnavi', title: 'Technical Editor', image: '/images/calstar board/Vaishnavi Tyagi- M-R.jpg' },
+    { name: 'Siddhi B.', title: 'Technical Editor', image: '/images/calstar board/Siddhi Bhosale- M- P.jpg' },
 ]
 
 const ScrollingRow = ({ people, reverse = false }) => {
@@ -78,7 +78,8 @@ const ScrollingRow = ({ people, reverse = false }) => {
                         key={`${person.name}-${index}`}
                         className="flex items-center gap-3 px-5 py-2 rounded-xl bg-white border border-secondary shadow-sm hover:shadow-md transition-all duration-300 min-w-[240px]"
                     >
-                        <Avatar className="h-10 w-10 border-2 border-secondary">
+                        <Avatar className="h-10 w-10 border-2 border-secondary overflow-hidden">
+                            {person.image && <AvatarImage src={person.image} alt={person.name} className="object-cover w-full h-full" />}
                             <AvatarFallback className="bg-secondary text-primary font-semibold text-xs">
                                 {getInitials(person.name)}
                             </AvatarFallback>
