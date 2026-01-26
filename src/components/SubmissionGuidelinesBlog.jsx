@@ -44,7 +44,7 @@ const SubmissionGuidelinesBlog = memo(() => {
       {/* Main Content */}
       <section className="guidelines-content">
         <div className="container">
-          
+
           {/* Themes Section */}
           <div className="guidelines-section">
             <div className="section-icon">
@@ -117,7 +117,7 @@ const SubmissionGuidelinesBlog = memo(() => {
                   Submissions shall be made via our <strong>Google Form</strong> (link to be provided). The manuscript should be in the form of a <strong>Microsoft Word document (.docx)</strong>. The Word document title and body must <strong>not contain any personal information</strong> of the author such as name and institution. <strong>Kindly do not send submissions via email.</strong>
                 </li>
                 <li>
-                  Author/authors will receive a <strong>confirmation mail within 24 hours</strong> of their submission. In case where no confirmation mail is received, the authors are requested to mail at <strong>submissions.calstar@mnlumumbai.edu.in</strong>
+                  Author/authors will receive a <strong>confirmation mail within 24 hours</strong> of their submission. In case where no confirmation mail is received, the authors are requested to mail at <strong><a href="mailto:calstar@mnlumumbai.edu.in">calstar@mnlumumbai.edu.in</a></strong>
                 </li>
                 <li>
                   Submissions must be <strong>original and unpublished</strong>. Co-authorship of up to <strong>2 authors</strong> is allowed.
@@ -139,10 +139,10 @@ const SubmissionGuidelinesBlog = memo(() => {
                 </li>
               </ol>
               <div className="submission-action">
-                <a href="#" className="btn btn-primary submission-btn">
+                <a href="https://forms.gle/o8wBRxLiuGm6aftUA" target="_blank" rel="noopener noreferrer" className="btn btn-primary submission-btn">
                   Submit Your Blog Post
                 </a>
-                <p className="submission-note">Google Form link will be available soon</p>
+                <p className="submission-note">Click above to submit your work</p>
               </div>
             </div>
           </div>
@@ -186,7 +186,7 @@ const SubmissionGuidelinesBlog = memo(() => {
 
               <div className="timeline-footer">
                 <p>
-                  The review process generally takes around <strong>2-3 weeks</strong>. In case of delays, authors may seek updates through our official email address <strong>queries.calstar@mnlumumbai.edu.in</strong>
+                  The review process generally takes around <strong>2-3 weeks</strong>. In case of delays, authors may seek updates through our official email address <strong><a href="mailto:calstar@mnlumumbai.edu.in">calstar@mnlumumbai.edu.in</a></strong>
                 </p>
                 <p>
                   However, certain submissions may require additional time for review, in which case the author will be promptly informed of the extension on a case-to-case basis via email.
