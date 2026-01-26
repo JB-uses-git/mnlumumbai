@@ -44,7 +44,7 @@ const BlogSubmissions = memo(() => {
       {/* Main Content */}
       <section className="submissions-content">
         <div className="container">
-          
+
           {/* Themes Section */}
           <div className="submissions-section">
             <div className="section-icon">
@@ -97,7 +97,7 @@ const BlogSubmissions = memo(() => {
                   <strong>Submit via Google Form:</strong> All submissions must be made through our official Google Form (see below). The manuscript should be in the form of a <strong>Microsoft Word document (.docx)</strong>. The Word document title and body must <strong>not contain any personal information</strong> of the author such as name and institution. <strong>Kindly do not send submissions via email.</strong>
                 </li>
                 <li>
-                  <strong>Confirmation:</strong> Author/authors will receive a <strong>confirmation mail within 24 hours</strong> of their submission. In case no confirmation mail is received, please contact us at <strong>submissions.calstar@mnlumumbai.edu.in</strong>
+                  <strong>Confirmation:</strong> Author/authors will receive a <strong>confirmation mail within 24 hours</strong> of their submission. In case no confirmation mail is received, please contact us at <strong><a href="mailto:calstar@mnlumumbai.edu.in">calstar@mnlumumbai.edu.in</a></strong>
                 </li>
                 <li>
                   <strong>Requirements:</strong> Submissions must be <strong>original and unpublished</strong>. Co-authorship of up to <strong>2 authors</strong> is allowed. <strong>Plagiarism above 10% will lead to rejection.</strong>
@@ -117,16 +117,16 @@ const BlogSubmissions = memo(() => {
                     <li>Manuscript Upload (Anonymous .docx file - no personal info in document)</li>
                   </ul>
                 </div>
-                
+
                 {/* Placeholder for Google Form */}
                 <div className="form-placeholder">
                   <div className="placeholder-content">
                     <FaUpload className="placeholder-icon" />
-                    <h4>Google Form Coming Soon</h4>
-                    <p>Our submission form is currently being set up.</p>
-                    <p>In the meantime, please contact us at:</p>
-                    <a href="mailto:submissions.calstar@mnlumumbai.edu.in" className="email-link">
-                      submissions.calstar@mnlumumbai.edu.in
+                    <h4>Ready to Submit?</h4>
+                    <p>Please use the button below to access our submission form.</p>
+                    <p>For any issues, contact us at:</p>
+                    <a href="mailto:calstar@mnlumumbai.edu.in" className="email-link">
+                      calstar@mnlumumbai.edu.in
                     </a>
                   </div>
                 </div>
@@ -148,11 +148,13 @@ const BlogSubmissions = memo(() => {
                 */}
 
                 <div className="submission-cta">
-                  <a 
-                    href="mailto:submissions.calstar@mnlumumbai.edu.in" 
+                  <a
+                    href="https://forms.gle/o8wBRxLiuGm6aftUA"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn btn-primary submit-btn"
                   >
-                    Submit Now via Email
+                    Submit Your Blog
                   </a>
                   <p className="cta-note">Click above to submit your work</p>
                 </div>
@@ -185,7 +187,7 @@ const BlogSubmissions = memo(() => {
                   <strong>Duration:</strong> The review process generally takes around <strong>2-3 weeks</strong>.
                 </li>
                 <li>
-                  <strong>Updates:</strong> In case of delays, authors may seek updates through our official email address <strong>queries.calstar@mnlumumbai.edu.in</strong>
+                  <strong>Updates:</strong> In case of delays, authors may seek updates through our official email address <strong><a href="mailto:calstar@mnlumumbai.edu.in">calstar@mnlumumbai.edu.in</a></strong>
                 </li>
                 <li>
                   <strong>Extensions:</strong> Certain submissions may require additional time for review, in which case the author will be promptly informed of the extension on a case-to-case basis via email.
