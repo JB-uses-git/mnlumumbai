@@ -91,61 +91,44 @@ const HeroSection = ({ title, subtitle, actions, stats, images, className }) => 
                     )}
                 </motion.div>
 
-                {/* Right Column: Image Collage */}
+                {/* Right Column: Single Professional Hero Image */}
                 <motion.div
-                    className="relative h-[400px] w-full sm:h-[500px]"
+                    className="relative flex items-center justify-center w-full h-[350px] sm:h-[450px]"
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
                 >
+                    {/* Decorative Background Glow */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 blur-3xl rounded-full" />
+                    
                     {/* Decorative Shapes */}
                     <motion.div
-                        className="absolute -top-4 left-1/4 h-16 w-16 rounded-full bg-blue-200/50 dark:bg-blue-800/30"
+                        className="absolute -top-4 right-1/4 h-12 w-12 rounded-full bg-blue-200/40 dark:bg-blue-800/20"
                         variants={floatingVariants}
                         animate="animate"
                     />
                     <motion.div
-                        className="absolute bottom-0 right-1/4 h-12 w-12 rounded-lg bg-purple-200/50 dark:bg-purple-800/30"
+                        className="absolute bottom-0 left-1/4 h-10 w-10 rounded-lg bg-purple-200/40 dark:bg-purple-800/20"
                         variants={floatingVariants}
                         animate="animate"
                         style={{ transitionDelay: '0.5s' }}
                     />
-                    <motion.div
-                        className="absolute bottom-1/4 left-4 h-6 w-6 rounded-full bg-green-200/50 dark:bg-green-800/30"
-                        variants={floatingVariants}
-                        animate="animate"
-                        style={{ transitionDelay: '1s' }}
-                    />
 
-                    {/* Images */}
+                    {/* Image Container with Elegant Border/Shadow */}
                     {images && images.length > 0 && (
-                        <>
-                            <motion.div
-                                className="absolute left-1/2 top-0 h-48 w-48 -translate-x-1/2 rounded-2xl bg-muted p-2 shadow-lg sm:h-64 sm:w-64"
-                                style={{ transformOrigin: 'bottom center', zIndex: 20 }}
-                                variants={imageVariants}
-                            >
-                                <img src={images[0]} alt="Hero 1" className="h-full w-full rounded-xl object-cover" />
-                            </motion.div>
-                            {images[1] && (
-                                <motion.div
-                                    className="absolute right-0 top-1/3 h-40 w-40 rounded-2xl bg-muted p-2 shadow-lg sm:h-56 sm:w-56"
-                                    style={{ transformOrigin: 'left center', zIndex: 10 }}
-                                    variants={imageVariants}
-                                >
-                                    <img src={images[1]} alt="Hero 2" className="h-full w-full rounded-xl object-cover" />
-                                </motion.div>
-                            )}
-                            {images[2] && (
-                                <motion.div
-                                    className="absolute bottom-0 left-0 h-32 w-32 rounded-2xl bg-muted p-2 shadow-lg sm:h-48 sm:w-48"
-                                    style={{ transformOrigin: 'top right', zIndex: 10 }}
-                                    variants={imageVariants}
-                                >
-                                    <img src={images[2]} alt="Hero 3" className="h-full w-full rounded-xl object-cover" />
-                                </motion.div>
-                            )}
-                        </>
+                        <motion.div
+                            className="relative w-full h-full max-w-[480px] overflow-hidden rounded-2xl border-4 border-white dark:border-gray-800 shadow-2xl bg-muted"
+                            variants={imageVariants}
+                            style={{ zIndex: 10 }}
+                        >
+                            <img 
+                                src={images[0]} 
+                                alt="CALSTAR Legal Research" 
+                                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700 ease-out" 
+                            />
+                            {/* Gradient Overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+                        </motion.div>
                     )}
                 </motion.div>
             </div>

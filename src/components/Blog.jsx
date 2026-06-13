@@ -2,43 +2,11 @@ import React, { memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './Blog.css'
 import InteractiveHoverButton from './ui/interactive-hover-button'
-import BoardOfEditorsContent from './BoardOfEditorsContent'
 
 const Blog = memo(() => {
   const navigate = useNavigate()
 
-  const blogs = [
-    {
-      id: 1,
-      title: 'Understanding Constitutional Rights in Modern India',
-      excerpt: 'An in-depth analysis of fundamental rights and their evolution in contemporary legal frameworks.',
-      author: 'Dr. Rajesh Kumar',
-      date: 'December 10, 2025',
-      category: 'Constitutional Law',
-      readTime: '8 min read',
-      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&h=400&fit=crop'
-    },
-    {
-      id: 2,
-      title: 'Corporate Governance and Compliance in 2025',
-      excerpt: 'Exploring the latest regulatory changes and their impact on corporate legal practices.',
-      author: 'Adv. Priya Sharma',
-      date: 'December 8, 2025',
-      category: 'Corporate Law',
-      readTime: '6 min read',
-      image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=400&fit=crop'
-    },
-    {
-      id: 3,
-      title: 'Environmental Law and Climate Justice',
-      excerpt: 'How environmental legislation is shaping the future of climate action and sustainability.',
-      author: 'Prof. Meera Patel',
-      date: 'December 5, 2025',
-      category: 'Environmental Law',
-      readTime: '10 min read',
-      image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&h=400&fit=crop'
-    }
-  ]
+  const blogs = []
 
   return (
     <section className="section blog" id="blog">
@@ -53,39 +21,52 @@ const Blog = memo(() => {
           </p>
         </div>
 
-        <div className="blog-grid">
-          {blogs.map((blog) => (
-            <article key={blog.id} className="blog-card">
-              <div className="blog-image-wrapper">
-                <img src={blog.image} alt={blog.title} loading="lazy" />
-                <span className="blog-category">{blog.category}</span>
-              </div>
-              <div className="blog-content">
-                <div className="blog-meta">
-                  <span className="blog-author">{blog.author}</span>
-                  <span className="blog-separator">•</span>
-                  <span className="blog-date">{blog.date}</span>
-                  <span className="blog-separator">•</span>
-                  <span className="blog-read-time">{blog.readTime}</span>
-                </div>
-                <h3 className="blog-title">{blog.title}</h3>
-                <p className="blog-excerpt">{blog.excerpt}</p>
-              </div>
-            </article>
-          ))}
-        </div>
+        {blogs.length === 0 ? (
+          <div className="empty-blogs-state" style={{ textAlign: 'center', padding: '3.5rem 2rem', background: '#f8fafc', borderRadius: '16px', border: '1px dashed #cbd5e1', margin: '2rem auto', maxWidth: '600px' }}>
+            <h3 style={{ fontSize: '1.35rem', color: 'var(--primary)', marginBottom: '0.75rem', fontWeight: '600' }}>No Blogs Published Yet</h3>
+            <p style={{ color: '#64748b', marginBottom: '1.75rem', fontSize: '0.975rem', lineHeight: '1.6' }}>
+              We are currently open for submissions! Share your legal insights, research papers, or case comments with us.
+            </p>
+            <InteractiveHoverButton className="btn btn-primary" onClick={() => navigate('/submissions')}>
+              Submit a Blog
+            </InteractiveHoverButton>
+          </div>
+        ) : (
+          <>
+            <div className="blog-grid">
+              {blogs.map((blog) => (
+                <article key={blog.id} className="blog-card">
+                  <div className="blog-image-wrapper">
+                    <img src={blog.image} alt={blog.title} loading="lazy" />
+                    <span className="blog-category">{blog.category}</span>
+                  </div>
+                  <div className="blog-content">
+                    <div className="blog-meta">
+                      <span className="blog-author">{blog.author}</span>
+                      <span className="blog-separator">•</span>
+                      <span className="blog-date">{blog.date}</span>
+                      <span className="blog-separator">•</span>
+                      <span className="blog-read-time">{blog.readTime}</span>
+                    </div>
+                    <h3 className="blog-title">{blog.title}</h3>
+                    <p className="blog-excerpt">{blog.excerpt}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
 
-        <div className="blog-footer">
-          <InteractiveHoverButton
-            className="btn btn-primary"
-            onClick={() => navigate('/blogs')}
-          >
-            View All Blogs
-          </InteractiveHoverButton>
-        </div>
+            <div className="blog-footer">
+              <InteractiveHoverButton
+                className="btn btn-primary"
+                onClick={() => navigate('/blogs')}
+              >
+                View All Blogs
+              </InteractiveHoverButton>
+            </div>
+          </>
+        )}
 
       </div>
-      <BoardOfEditorsContent />
     </section >
   )
 })

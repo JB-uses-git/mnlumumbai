@@ -1,9 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import HeroSection from './ui/hero-section'
-import { BookOpen, Users, Gavel } from 'lucide-react'
 import AnimatedHero from './ui/AnimatedHero'
 
 const Hero = () => {
+  const navigate = useNavigate()
+
   const heroData = {
     title: (
       <div className="flex justify-center lg:justify-start">
@@ -11,15 +13,26 @@ const Hero = () => {
       </div>
     ),
     subtitle: 'Centre for Advanced Legal Studies, Training and Research (CALSTAR) at MNLU Mumbai.',
-    actions: [],
-    // User requested to remove the specific stats "5+ Research Areas...", so we can either provide empty or better ones.
-    // The design looks better with stats, so let's use relevant generic icons or hide them if preferred.
-    // I'll comment them out to respect "remove this" explicitly.
+    actions: [
+      {
+        text: 'Submit to Blog',
+        onClick: () => navigate('/submissions'),
+        variant: 'default',
+        className: 'bg-primary hover:bg-primary/95 text-white font-medium px-8 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg'
+      },
+      {
+        text: 'About CALSTAR',
+        onClick: () => {
+          const element = document.getElementById('about')
+          if (element) element.scrollIntoView({ behavior: 'smooth' })
+        },
+        variant: 'outline',
+        className: 'border-primary text-primary hover:bg-primary/5 font-medium px-8 py-3 rounded-full transition-all duration-300'
+      }
+    ],
     stats: [],
     images: [
-      'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=2000', // Law library / Abstract
-      'https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=2000', // Students
-      'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=2000', // Handshake/Collaboration
+      'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=2000', // Scales of Justice & Gavel
     ],
   };
 
