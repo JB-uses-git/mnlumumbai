@@ -1,7 +1,7 @@
 import React, { memo, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { FaHome, FaArrowLeft, FaPenFancy, FaListUl, FaUpload, FaClock } from 'react-icons/fa'
-import './BlogSubmissions.css'
+import { FaHome, FaArrowLeft, FaPenFancy, FaListUl, FaUpload, FaClock, FaCheckCircle, FaExclamationCircle, FaEnvelope } from 'react-icons/fa'
+import { motion } from 'framer-motion'
 import Footer from './Footer'
 
 const BlogSubmissions = memo(() => {
@@ -11,199 +11,212 @@ const BlogSubmissions = memo(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
   }, [])
 
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15
+      }
+    }
+  }
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+  }
+
   return (
-    <div className="blog-submissions-page">
+    <div className="min-h-screen bg-background text-foreground flex flex-col font-sans">
       {/* Navbar */}
-      <nav className="submissions-navbar">
-        <div className="submissions-nav-container">
-          <div className="nav-buttons">
-            <button className="home-btn" onClick={() => navigate('/')} aria-label="Go to home">
-              <FaHome />
+      <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border shadow-sm">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <button onClick={() => navigate('/')} className="p-2.5 rounded-xl bg-primary/5 hover:bg-primary/10 text-primary transition-colors flex items-center justify-center">
+              <FaHome size={18} />
             </button>
-            <button className="back-btn" onClick={() => navigate('/blogs')} aria-label="Back to blogs">
-              <FaArrowLeft />
+            <button onClick={() => navigate('/blogs')} className="p-2.5 rounded-xl bg-primary/5 hover:bg-primary/10 text-primary transition-colors flex items-center justify-center">
+              <FaArrowLeft size={18} />
             </button>
           </div>
-          <h1 className="submissions-nav-title">Call for Submissions</h1>
+          <h1 className="text-xl font-serif font-bold text-primary">Call for Submissions</h1>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="submissions-hero">
-        <div className="container">
-          <div className="hero-icon">
-            <FaPenFancy />
+      <header className="relative w-full overflow-hidden bg-primary py-24 sm:py-32 flex items-center justify-center">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-black opacity-90"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent opacity-30 blur-2xl"></div>
+        <div className="relative z-10 container mx-auto px-6 text-center max-w-4xl flex flex-col items-center">
+          <div className="w-20 h-20 bg-secondary/20 rounded-2xl flex items-center justify-center mb-8 backdrop-blur-sm border border-secondary/20 shadow-xl">
+            <FaPenFancy className="text-secondary text-4xl" />
           </div>
-          <h1 className="submissions-hero-title">Call for Submissions: CALSTAR Blog</h1>
-          <p className="submissions-hero-subtitle">
-            Share your insights on contemporary legal issues with our community
+          <h1 className="text-4xl md:text-6xl font-serif font-extrabold text-white mb-6 tracking-tight">Call for Submissions: CALSTAR Blog</h1>
+          <p className="text-lg md:text-2xl text-primary-foreground/90 max-w-2xl font-medium">
+            Share your insights on contemporary legal issues with our community.
           </p>
         </div>
-      </section>
+      </header>
 
       {/* Main Content */}
-      <section className="submissions-content">
-        <div className="container">
-
+      <main className="flex-grow container mx-auto px-4 sm:px-6 py-16 max-w-5xl">
+        <motion.div 
+          className="grid gap-12"
+          variants={staggerContainer}
+          initial="hidden"
+          animate="show"
+        >
           {/* Themes Section */}
-          <div className="submissions-section">
-            <div className="section-icon">
-              <FaPenFancy />
-            </div>
-            <h2 className="submissions-section-title">Themes</h2>
-            <div className="submissions-text">
-              <p>
-                The CALSTAR blog publishes the latest updates on developments relating to law and government policy. The submission should deal with a relevant and contemporaneous issue concerning any area of the law. <strong>Only original content will be accepted.</strong>
-              </p>
-            </div>
-          </div>
-
-          {/* Guidelines for the Content */}
-          <div className="submissions-section">
-            <div className="section-icon">
-              <FaListUl />
-            </div>
-            <h2 className="submissions-section-title">Guidelines for the Content</h2>
-            <div className="submissions-text">
-              <ol className="submissions-numbered-list">
-                <li>
-                  <strong>Word Limit:</strong> All submissions shall ideally be between <strong>1,200-2,000 words</strong>. The title of the submission shall not exceed <strong>15 words</strong>.
-                </li>
-                <li>
-                  <strong>Formatting:</strong> Font: Times New Roman, Size: 12, Line spacing: 1.5. <strong>Justify all text.</strong> Use sub-headings where required.
-                </li>
-                <li>
-                  <strong>Citations:</strong> All sources must be <strong>hyperlinked (compulsorily)</strong>, linked to keywords and phrases in the body of the submission. If necessary, authors may use endnotes. Use of footnotes/endnotes should be limited to circumstances where a hyperlink reference is not available. For footnotes/endnotes, the <strong>Oxford University Standard for Citation of Legal Authorities (OSCOLA) (4th edition)</strong> must be adhered to.
-                </li>
-                <li>
-                  <strong>Language:</strong> Language should be <strong>formal, neutral, and precise</strong>. Avoid overuse of legalese.
-                </li>
-                <li>
-                  <strong>Approach:</strong> Submissions should be <strong>analytical and solution-oriented</strong> rather than descriptive.
-                </li>
-              </ol>
-            </div>
-          </div>
-
-          {/* Submission Process */}
-          <div className="submissions-section highlight-section">
-            <div className="section-icon">
-              <FaUpload />
-            </div>
-            <h2 className="submissions-section-title">Submission Process</h2>
-            <div className="submissions-text">
-              <ol className="submissions-numbered-list">
-                <li>
-                  <strong>Submit via Google Form:</strong> All submissions must be made through our official Google Form (see below). The manuscript should be in the form of a <strong>Microsoft Word document (.docx)</strong>. The Word document title and body must <strong>not contain any personal information</strong> of the author such as name and institution. <strong>Kindly do not send submissions via email.</strong>
-                </li>
-                <li>
-                  <strong>Confirmation:</strong> Author/authors will receive a <strong>confirmation mail within 24 hours</strong> of their submission. In case no confirmation mail is received, please contact us at <strong><a href="mailto:calstar@mnlumumbai.edu.in">calstar@mnlumumbai.edu.in</a></strong>
-                </li>
-                <li>
-                  <strong>Requirements:</strong> Submissions must be <strong>original and unpublished</strong>. Co-authorship of up to <strong>2 authors</strong> is allowed. <strong>Plagiarism above 10% will lead to rejection.</strong>
-                </li>
-              </ol>
-
-              {/* Google Form Embed Section */}
-              <div className="google-form-container">
-                <h3 className="form-heading">Submit Your Blog Post</h3>
-                <div className="form-instructions">
-                  <p><strong>Required Information:</strong></p>
-                  <ul>
-                    <li>Author Name(s)</li>
-                    <li>Institution/Affiliation</li>
-                    <li>Email Address</li>
-                    <li>Short Bio (50-100 words)</li>
-                    <li>Manuscript Upload (Anonymous .docx file - no personal info in document)</li>
-                  </ul>
-                </div>
-
-                {/* Placeholder for Google Form */}
-                <div className="form-placeholder">
-                  <div className="placeholder-content">
-                    <FaUpload className="placeholder-icon" />
-                    <h4>Ready to Submit?</h4>
-                    <p>Please use the button below to access our submission form.</p>
-                    <p>For any issues, contact us at:</p>
-                    <a href="mailto:calstar@mnlumumbai.edu.in" className="email-link">
-                      calstar@mnlumumbai.edu.in
-                    </a>
-                  </div>
-                </div>
-
-                {/* Uncomment below when Google Form is ready
-                <div className="form-embed">
-                  <iframe 
-                    src="YOUR_GOOGLE_FORM_URL_HERE"
-                    width="100%" 
-                    height="800" 
-                    frameBorder="0" 
-                    marginHeight="0" 
-                    marginWidth="0"
-                    title="CALSTAR Blog Submission Form"
-                  >
-                    Loading…
-                  </iframe>
-                </div>
-                */}
-
-                <div className="submission-cta">
-                  <a
-                    href="https://forms.gle/o8wBRxLiuGm6aftUA"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-primary submit-btn"
-                  >
-                    Submit Your Blog
-                  </a>
-                  <p className="cta-note">Click above to submit your work</p>
-                </div>
+          <motion.section variants={fadeInUp} className="bg-card rounded-3xl p-6 sm:p-8 md:p-12 shadow-sm border border-border/50 relative overflow-hidden group hover:shadow-md transition-shadow">
+            <div className="absolute top-0 left-0 w-2 h-full bg-primary"></div>
+            <div className="flex items-start gap-6">
+              <div className="hidden sm:flex w-16 h-16 rounded-2xl bg-primary/10 text-primary items-center justify-center flex-shrink-0">
+                <FaPenFancy size={28} />
               </div>
-            </div>
-          </div>
-
-          {/* Tentative Timeline */}
-          <div className="submissions-section">
-            <div className="section-icon">
-              <FaClock />
-            </div>
-            <h2 className="submissions-section-title">Tentative Timeline</h2>
-            <div className="submissions-text">
-              <p className="timeline-intro">
-                In order to uphold the highest standards of academic integrity and quality, all submissions shall undergo a <strong>three-tier review process</strong>. The author shall be informed of the decision taken at the conclusion of each stage of the review process.
-              </p>
-
-              <ol className="submissions-numbered-list timeline-list">
-                <li>
-                  <strong>Stage I - Preliminary Review:</strong> Each submission will undergo a preliminary evaluation to ensure adherence to the basic editorial requirements. This includes a <strong>plagiarism check, AI check</strong> as well as an assessment of grammar, sentence structure, coherence, and overall readability.
-                </li>
-                <li>
-                  <strong>Stage II - Substantive Review:</strong> Submissions that successfully clear the preliminary review will be evaluated for the <strong>depth of analysis, originality of argumentation, and novelty of the topic</strong>. The reviewers at this stage shall assess whether the piece contributes meaningfully to existing discourse and aligns with the thematic focus of the Blog.
-                </li>
-                <li>
-                  <strong>Stage III - Final Editorial Review:</strong> In the final stage, the submission will be reviewed by the <strong>Distinguished Board of Editors</strong>, comprising eminent academicians, practitioners, and professionals in the field. The Board shall make the final determination regarding publication, taking into consideration the overall quality, analytical rigour, and relevance of the submission.
-                </li>
-                <li>
-                  <strong>Duration:</strong> The review process generally takes around <strong>2-3 weeks</strong>.
-                </li>
-                <li>
-                  <strong>Updates:</strong> In case of delays, authors may seek updates through our official email address <strong><a href="mailto:calstar@mnlumumbai.edu.in">calstar@mnlumumbai.edu.in</a></strong>
-                </li>
-                <li>
-                  <strong>Extensions:</strong> Certain submissions may require additional time for review, in which case the author will be promptly informed of the extension on a case-to-case basis via email.
-                </li>
-              </ol>
-
-              <div className="timeline-footer">
-                <p className="important-note">
-                  <strong>Important:</strong> All submissions will undergo a <strong>blind peer-review</strong> by the Editorial Board. The Editorial Board reserves the right to suggest edits or reject submissions without detailed feedback. Once published, the piece cannot be republished elsewhere without express permission.
+              <div>
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-primary mb-4">Themes</h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  The CALSTAR blog publishes the latest updates on developments relating to law and government policy. The submission should deal with a relevant and contemporaneous issue concerning any area of the law. <strong className="text-foreground font-semibold">Only original content will be accepted.</strong>
                 </p>
               </div>
             </div>
-          </div>
+          </motion.section>
 
-        </div>
-      </section>
+          {/* Guidelines Section */}
+          <motion.section variants={fadeInUp} className="bg-card rounded-3xl p-6 sm:p-8 md:p-12 shadow-sm border border-border/50 relative hover:shadow-md transition-shadow">
+            <div className="absolute top-0 left-0 w-2 h-full bg-primary"></div>
+            <div className="flex flex-col sm:flex-row items-start gap-6 mb-8">
+               <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+                <FaListUl size={28} />
+              </div>
+              <div className="pt-2">
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-primary">Guidelines for Content</h2>
+              </div>
+            </div>
+            <div className="grid gap-6">
+              {[
+                { title: 'Word Limit', desc: 'All submissions shall ideally be between 1,200-2,000 words. The title of the submission shall not exceed 15 words.' },
+                { title: 'Formatting', desc: 'Font: Times New Roman, Size: 12, Line spacing: 1.5. Justify all text. Use sub-headings where required.' },
+                { title: 'Citations', desc: 'All sources must be hyperlinked (compulsorily), linked to keywords and phrases in the body of the submission. If necessary, authors may use endnotes. Use of footnotes/endnotes should be limited to circumstances where a hyperlink reference is not available. For footnotes/endnotes, the Oxford University Standard for Citation of Legal Authorities (OSCOLA) (4th edition) must be adhered to.' },
+                { title: 'Language', desc: 'Language should be formal, neutral, and precise. Avoid overuse of legalese.' },
+                { title: 'Approach', desc: 'Submissions should be analytical and solution-oriented rather than descriptive.' }
+              ].map((item, i) => (
+                <div key={i} className="flex flex-col sm:flex-row gap-4 p-5 rounded-2xl bg-muted/30 hover:bg-muted/50 transition-colors">
+                  <div className="mt-1 flex-shrink-0 text-primary hidden sm:block"><FaCheckCircle size={20} /></div>
+                  <div>
+                    <h3 className="font-bold text-foreground text-lg mb-1 sm:mb-2 flex items-center gap-2">
+                      <span className="sm:hidden text-primary"><FaCheckCircle size={16} /></span>
+                      {item.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.section>
+
+          {/* Submission Process */}
+          <motion.section variants={fadeInUp} className="bg-gradient-to-br from-primary/5 to-transparent rounded-3xl p-6 sm:p-8 md:p-12 shadow-sm border border-primary/20 relative hover:shadow-md transition-shadow">
+            <div className="absolute top-0 left-0 w-2 h-full bg-secondary"></div>
+            <div className="flex flex-col sm:flex-row items-start gap-6 mb-8">
+               <div className="w-16 h-16 rounded-2xl bg-secondary/20 text-secondary-foreground flex items-center justify-center flex-shrink-0 shadow-sm border border-secondary/30">
+                <FaUpload size={28} />
+              </div>
+              <div className="pt-2">
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-primary">Submission Process</h2>
+              </div>
+            </div>
+            
+            <div className="grid gap-6 mb-12">
+              <div className="bg-card p-6 rounded-2xl border border-border shadow-sm flex flex-col sm:flex-row gap-4 items-start">
+                <div className="mt-1 flex-shrink-0 text-primary hidden sm:block"><FaCheckCircle size={20} /></div>
+                <div>
+                  <h3 className="font-bold text-foreground text-lg mb-2 flex items-center gap-2">
+                      <span className="sm:hidden text-primary"><FaCheckCircle size={16} /></span>
+                      Submit via Google Form
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">All submissions must be made through our official Google Form. The manuscript should be a <strong>Microsoft Word document (.docx)</strong> and must <strong>not contain any personal information</strong>. Kindly do not send submissions via email.</p>
+                </div>
+              </div>
+              <div className="bg-card p-6 rounded-2xl border border-border shadow-sm flex flex-col sm:flex-row gap-4 items-start">
+                <div className="mt-1 flex-shrink-0 text-primary hidden sm:block"><FaCheckCircle size={20} /></div>
+                <div>
+                  <h3 className="font-bold text-foreground text-lg mb-2 flex items-center gap-2">
+                      <span className="sm:hidden text-primary"><FaCheckCircle size={16} /></span>
+                      Confirmation
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">Authors will receive a confirmation mail within 24 hours. If not received, contact <a href="mailto:calstar@mnlumumbai.edu.in" className="text-primary hover:underline font-semibold">calstar@mnlumumbai.edu.in</a>.</p>
+                </div>
+              </div>
+              <div className="bg-card p-6 rounded-2xl border border-red-100 shadow-sm flex flex-col sm:flex-row gap-4 items-start bg-red-50/30">
+                <div className="mt-1 flex-shrink-0 text-red-500 hidden sm:block"><FaExclamationCircle size={20} /></div>
+                <div>
+                  <h3 className="font-bold text-red-800 text-lg mb-2 flex items-center gap-2">
+                      <span className="sm:hidden text-red-500"><FaExclamationCircle size={16} /></span>
+                      Requirements
+                  </h3>
+                  <p className="text-red-900/80 leading-relaxed">Submissions must be original and unpublished. Co-authorship of up to 2 authors is allowed. <strong className="text-red-600">Plagiarism above 10% will lead to rejection.</strong></p>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="flex flex-col items-center justify-center text-center p-8 sm:p-12 bg-card rounded-3xl border border-primary/20 shadow-lg relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent"></div>
+              <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-4 relative z-10">Ready to Submit?</h3>
+              <p className="text-muted-foreground mb-10 max-w-lg relative z-10 text-lg">Make sure your manuscript follows all guidelines and is stripped of personal information before uploading.</p>
+              <a
+                href="https://forms.gle/o8wBRxLiuGm6aftUA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative z-10 flex items-center justify-center gap-3 bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-5 rounded-full shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 font-semibold w-full sm:w-auto text-center"
+              >
+                <FaUpload size={20} /> Submit Your Blog Post
+              </a>
+            </div>
+          </motion.section>
+
+          {/* Tentative Timeline */}
+          <motion.section variants={fadeInUp} className="bg-card rounded-3xl p-6 sm:p-8 md:p-12 shadow-sm border border-border/50 relative hover:shadow-md transition-shadow mb-12">
+            <div className="absolute top-0 left-0 w-2 h-full bg-primary"></div>
+            <div className="flex flex-col sm:flex-row items-start gap-6 mb-10">
+               <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+                <FaClock size={28} />
+              </div>
+              <div className="pt-2">
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-primary mb-3">Tentative Timeline</h2>
+                <p className="text-muted-foreground text-lg max-w-3xl">In order to uphold the highest standards of academic integrity and quality, all submissions undergo a rigorous <strong className="text-foreground font-semibold">three-tier review process</strong>.</p>
+              </div>
+            </div>
+
+            <div className="relative border-l-4 border-primary/20 ml-4 sm:ml-6 md:ml-8 space-y-12 pb-8 mt-12">
+              {[
+                { stage: 'Stage I', title: 'Preliminary Review', desc: 'Checks for adherence to basic editorial requirements. Includes a plagiarism check, AI check, and an assessment of grammar, sentence structure, coherence, and overall readability.' },
+                { stage: 'Stage II', title: 'Substantive Review', desc: 'Evaluated for depth of analysis, originality of argumentation, and novelty of the topic. Reviewers assess whether the piece contributes meaningfully to existing discourse.' },
+                { stage: 'Stage III', title: 'Final Editorial Review', desc: 'Reviewed by the Distinguished Board of Editors, comprising eminent academicians and practitioners. The Board makes the final determination regarding publication.' }
+              ].map((item, i) => (
+                <div key={i} className="relative pl-8 sm:pl-10 md:pl-12">
+                  <div className="absolute -left-[1.65rem] sm:-left-[1.9rem] md:-left-[2.3rem] top-0 md:top-1 w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary border-4 border-card flex items-center justify-center shadow-md">
+                    <div className="hidden md:block w-2 h-2 rounded-full bg-white"></div>
+                  </div>
+                  <div className="inline-block px-3 py-1 bg-primary/10 text-primary font-bold text-sm rounded-full mb-3">{item.stage}</div>
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground text-lg leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12 bg-muted/40 p-6 sm:p-8 rounded-2xl border border-border/50">
+              <ul className="space-y-5 text-muted-foreground text-lg">
+                <li className="flex gap-4 items-start"><FaClock className="text-primary mt-1.5 flex-shrink-0" size={18} /> <span>The review process generally takes around <strong className="text-foreground">2-3 weeks</strong>.</span></li>
+                <li className="flex gap-4 items-start"><FaEnvelope className="text-primary mt-1.5 flex-shrink-0" size={18} /> <span>In case of delays, authors may seek updates through <a href="mailto:calstar@mnlumumbai.edu.in" className="text-primary hover:underline font-semibold">calstar@mnlumumbai.edu.in</a></span></li>
+                <li className="flex gap-4 items-start"><FaExclamationCircle className="text-primary mt-1.5 flex-shrink-0" size={18} /> <span>All submissions undergo a <strong className="text-foreground">blind peer-review</strong>. The Editorial Board reserves the right to suggest edits or reject submissions without detailed feedback.</span></li>
+              </ul>
+            </div>
+          </motion.section>
+
+        </motion.div>
+      </main>
 
       <Footer />
     </div>
@@ -211,5 +224,4 @@ const BlogSubmissions = memo(() => {
 })
 
 BlogSubmissions.displayName = 'BlogSubmissions'
-
 export default BlogSubmissions

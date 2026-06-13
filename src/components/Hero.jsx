@@ -31,9 +31,6 @@ const Hero = () => {
       }
     ],
     stats: [],
-    images: [
-      'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=2000', // Scales of Justice & Gavel
-    ],
   };
 
   return (
@@ -43,7 +40,6 @@ const Hero = () => {
         subtitle={heroData.subtitle}
         actions={heroData.actions}
         stats={heroData.stats}
-        images={heroData.images}
       />
     </div>
   )

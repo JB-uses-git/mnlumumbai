@@ -64,11 +64,6 @@
   --blue-soft: #e0f0f5;
   --cream-light: #fffdf5;
 
-  /* Semantic System */
-  --primary: var(--color-old-burgundy);
-  --secondary: var(--color-pastel-blue);
-  --accent: var(--color-buttermilk);
-
   /* Backgrounds: Clean & Elegant */
   --bg-body: #FEFDF5;
   /* Smooth off-white light yellow tone */
