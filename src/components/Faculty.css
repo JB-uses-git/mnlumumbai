@@ -1,6 +1,6 @@
 .faculty {
   background: var(--page-bg);
-  padding: 40px 0; /* reduced to bring section up */
+  padding: var(--section-spacing) 0;
 }
 
 .faculty-grid {

@@ -39,7 +39,7 @@ const Events = memo(() => {
           Stay updated with our latest events, workshops, and academic activities
         </p>
 
-        <div className="events-grid grid grid-2" style={{ maxWidth: '800px', margin: '0 auto' }}>
+        <div className="events-grid grid grid-2">
           {allEvents.map((event, index) => (
             <div key={index} className="event-card card">
               <span 

@@ -24,7 +24,7 @@
 }
 
 .blog-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
 }
 
@@ -50,8 +50,8 @@
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background: var(--accent);
-  color: var(--light);
+  background: var(--color-old-burgundy);
+  color: var(--white);
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
   font-size: 0.75rem;
@@ -97,6 +97,58 @@
 .blog-footer {
   text-align: center;
   margin-top: 3rem;
+}
+
+/* Submissions Banner */
+.blog-submissions-banner {
+  background: linear-gradient(135deg, rgba(67, 48, 46, 0.06) 0%, rgba(67, 48, 46, 0.02) 100%);
+  padding: 1rem 2rem;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  margin: 1rem auto 2rem;
+  max-width: 700px;
+  border: 1.5px solid var(--color-old-burgundy);
+}
+
+.blog-submissions-banner p {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--dark);
+}
+
+.banner-link {
+  color: var(--color-old-burgundy);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.banner-link:hover {
+  opacity: 0.8;
+}
+
+/* Empty State */
+.empty-blogs-state {
+  text-align: center;
+  padding: 3.5rem 2rem;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--border);
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.empty-blogs-title {
+  font-size: 1.35rem;
+  color: var(--dark);
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.empty-blogs-description {
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+  font-size: 0.975rem;
+  line-height: 1.6;
 }
 
 @media (max-width: 768px) {
