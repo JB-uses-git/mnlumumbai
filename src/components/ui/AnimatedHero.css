@@ -35,8 +35,7 @@
   line-height: 1.3em;
   white-space: nowrap;
   transition: opacity 350ms ease, transform 450ms ease;
-  /* Use Burgundy explicitly for the animated word, or primary */
-  color: var(--primary);
+  color: var(--color-old-burgundy);
   /* Removed gradient for cleaner look, or re-add if desired but using valid vars */
   background: none;
   -webkit-text-fill-color: initial;

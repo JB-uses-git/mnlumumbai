@@ -83,7 +83,6 @@ html {
   --gray: rgba(67, 48, 46, 0.65);
   --accent: var(--color-old-burgundy);
   --accent-blue: var(--color-pastel-blue);
-  --primary: hsl(7, 18%, 22%);
 
   /* Typography */
   --font-sans: 'Outfit', sans-serif;
@@ -215,7 +214,7 @@ button {
 
 /* Primary: Burgundy solid */
 .btn-primary {
-  background: var(--primary);
+  background: var(--color-old-burgundy);
   color: #fff;
   /* White text on dark burgundy is classic */
   box-shadow: var(--shadow-md);
@@ -231,12 +230,12 @@ button {
 /* Secondary: Outline/Ghost style for elegance */
 .btn-secondary {
   background: transparent;
-  color: var(--primary);
+  color: var(--color-old-burgundy);
   border: 1px solid var(--border);
 }
 
 .btn-secondary:hover {
-  border-color: var(--primary);
+  border-color: var(--color-old-burgundy);
   background: var(--bg-subtle);
 }
 
