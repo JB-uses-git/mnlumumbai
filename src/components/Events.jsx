@@ -7,26 +7,26 @@ const Events = memo(() => {
   const allEvents = [
     {
       title: 'Call for Blogs',
-      date: 'Rolling Submissions',
+      date: 'Submissions Open Throughout the Year (Reviewed on a rolling basis)',
       time: '',
       location: 'Online Submission',
-      category: 'Blog',
-      description: 'CALSTAR invites rolling submissions for its academic blog. We welcome papers, articles, and reviews from law students, academicians, and practitioners on contemporary legal issues.'
+      category: 'Publication',
+      description: "CALSTAR invites original blog submissions on contemporary legal issues, policy developments, and emerging areas of law. Selected entries will be published on the Centre's official blog platform."
     },
     {
-      title: 'Blog Writing Competition',
-      date: 'Coming Soon',
+      title: 'National Blog Writing Competition',
+      date: 'Dates to be Announced Soon',
       time: '',
       location: 'Online',
       category: 'Competition',
-      description: 'Participate in the upcoming CALSTAR Blog Writing Competition. Exciting cash prizes and publication opportunities for the winning entries.'
+      description: 'A national-level blog writing competition aimed at encouraging legal research, critical analysis, and academic writing among students and young scholars.'
     }
   ]
 
   const getCategoryColor = (category) => {
     const colors = {
       'Competition': '#ef4444',
-      'Blog': '#6366f1'
+      'Publication': '#6366f1'
     }
     return colors[category] || '#6b7280'
   }
