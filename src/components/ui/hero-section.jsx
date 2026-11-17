@@ -47,7 +47,7 @@ const HeroSection = ({ title, subtitle, actions, stats, className }) => {
                     {/* Badge/Eyebrow */}
                     <motion.div variants={itemVariants} className="mb-6">
                         <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary border border-primary/20 backdrop-blur-sm shadow-sm">
-                            MNLU Mumbai's Premier Legal Hub
+                            Research and Training Centre
                         </span>
                     </motion.div>
 

@@ -16,7 +16,6 @@ const getInitials = (name) => {
 
 // Data Definition
 const peerReviewers = [
-    { name: 'Ms. Aastha Tiwari', title: 'Peer Review', image: '/images/faculty/1728539134550.jpeg' },
     { name: 'Mr. Suraj Karande', title: 'Peer Review', image: '/images/faculty/1777.jpeg' },
 ]
 

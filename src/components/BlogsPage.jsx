@@ -46,7 +46,7 @@ const BlogsPage = memo(() => {
               <span>Blogs</span>
             </li>
             <li className="blogs-nav-item" onClick={() => navigate('/submissions')}>
-              <span>Submit to Blog</span>
+              <span>Submit a Blog</span>
             </li>
             <li 
               className={`blogs-nav-item dropdown ${dropdownOpen ? 'open' : ''}`}
@@ -119,7 +119,7 @@ const BlogsPage = memo(() => {
                   boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' 
                 }}
               >
-                Submit to Blog
+                Submit a Blog
               </button>
             </div>
           ) : (

@@ -12,7 +12,6 @@ const BoardOfEditors = memo(() => {
     {
       title: 'Peer Reviewers',
       members: [
-        { name: 'Ms. Aastha Tiwari', affiliation: '', image: '/images/faculty/1728539134550.jpeg' },
         { name: 'Mr. Suraj Karande', affiliation: '', image: '/images/faculty/1777.jpeg' },
       ]
     },

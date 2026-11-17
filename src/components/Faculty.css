@@ -3,11 +3,36 @@
   padding: var(--section-spacing) 0;
 }
 
+.people-category {
+  margin-top: 2.5rem;
+}
+
+.people-category-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--dark);
+  text-align: center;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.people-category-title::after {
+  content: '';
+  display: block;
+  width: 45px;
+  height: 2px;
+  background: var(--primary);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
 .faculty-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem; /* slightly tighter spacing */
-  margin-top: 1.5rem; /* reduce top gap to pull content up */
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1.5rem;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
@@ -18,6 +43,31 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  width: 100%;
+  max-width: 300px;
+}
+
+.office-bearers-category {
+  margin-top: 3.5rem;
+  margin-bottom: 3rem;
+}
+
+.office-bearers-placeholder {
+  max-width: 650px;
+  margin: 1.5rem auto 0;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  background: #f8fafc;
+  border-radius: 16px;
+  border: 1.5px dashed #cbd5e1;
+}
+
+.office-bearers-placeholder p {
+  color: #64748b;
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.6;
 }
 
 .faculty-image-wrapper {

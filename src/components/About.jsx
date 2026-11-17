@@ -50,7 +50,7 @@ const About = memo(() => {
             </p>
             <h3 style={{ marginTop: '1.5rem' }}>Our Vision</h3>
             <p>
-              Our vision is to create a space where curiosity meets scholarship through empowering students and researchers to explore, learn, and produce impactful legal work that influences thought and practice in society. Under the distinguished guidance of Ms. Aastha Tiwari along with the active participation of all the members, the Centre contributes to the expanding field of legal scholarship and promotes socially relevant legal education. Through its research and outreach, the Centre aims to make law a tool for empowerment, awareness, and lasting change.
+              Our vision is to create a space where curiosity meets scholarship through empowering students and researchers to explore, learn, and produce impactful legal work that influences thought and practice in society. Under the distinguished guidance of Mr. Suraj Karande along with the active participation of all the members, the Centre contributes to the expanding field of legal scholarship and promotes socially relevant legal education. Through its research and outreach, the Centre aims to make law a tool for empowerment, awareness, and lasting change.
             </p>
           </div>
         </div>

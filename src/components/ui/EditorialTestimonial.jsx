@@ -7,6 +7,7 @@ const EditorialTestimonial = ({ testimonials }) => {
   const [isTransitioning, setIsTransitioning] = useState(false)
 
   useEffect(() => {
+    if (testimonials.length <= 1) return
     const timer = setInterval(() => {
       setIsTransitioning(true)
       setTimeout(() => {
@@ -16,7 +17,7 @@ const EditorialTestimonial = ({ testimonials }) => {
     }, 3000)
 
     return () => clearInterval(timer)
-  }, [])
+  }, [testimonials.length])
 
   const handleChange = (index) => {
     if (index === active || isTransitioning) return
@@ -78,34 +79,36 @@ const EditorialTestimonial = ({ testimonials }) => {
       </div>
 
       {/* Navigation - vertical line selector */}
-      <div className="editorial-navigation">
-        <div className="nav-left">
-          <div className="nav-indicators">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => handleChange(index)}
-                className="nav-indicator-btn"
-                aria-label={`View testimonial ${index + 1}`}
-              >
-                <span className={`nav-indicator-line ${index === active ? 'active' : ''}`} />
-              </button>
-            ))}
+      {testimonials.length > 1 && (
+        <div className="editorial-navigation">
+          <div className="nav-left">
+            <div className="nav-indicators">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleChange(index)}
+                  className="nav-indicator-btn"
+                  aria-label={`View testimonial ${index + 1}`}
+                >
+                  <span className={`nav-indicator-line ${index === active ? 'active' : ''}`} />
+                </button>
+              ))}
+            </div>
+            <span className="nav-counter">
+              {String(active + 1).padStart(2, '0')} / {String(testimonials.length).padStart(2, '0')}
+            </span>
           </div>
-          <span className="nav-counter">
-            {String(active + 1).padStart(2, '0')} / {String(testimonials.length).padStart(2, '0')}
-          </span>
-        </div>
 
-        <div className="nav-arrows">
-          <button onClick={handlePrev} className="nav-arrow-btn" aria-label="Previous testimonial">
-            <ChevronLeft className="nav-icon" />
-          </button>
-          <button onClick={handleNext} className="nav-arrow-btn" aria-label="Next testimonial">
-            <ChevronRight className="nav-icon" />
-          </button>
+          <div className="nav-arrows">
+            <button onClick={handlePrev} className="nav-arrow-btn" aria-label="Previous testimonial">
+              <ChevronLeft className="nav-icon" />
+            </button>
+            <button onClick={handleNext} className="nav-arrow-btn" aria-label="Next testimonial">
+              <ChevronRight className="nav-icon" />
+            </button>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }

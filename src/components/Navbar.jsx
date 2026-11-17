@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { FaHome, FaInfoCircle, FaBook, FaCalendarAlt, FaBlog, FaEnvelope } from 'react-icons/fa'
+import { FaHome, FaInfoCircle, FaBook, FaCalendarAlt, FaBlog, FaEnvelope, FaUsers } from 'react-icons/fa'
 import TubelightNavbar from './ui/TubelightNavbar'
 
 const SECTION_CONFIG = [
   { name: 'Home', id: 'home', icon: FaHome },
   { name: 'About', id: 'about', icon: FaInfoCircle },
 
-  { name: 'Faculty', id: 'faculty', icon: FaBook },
+  { name: 'People', id: 'people', icon: FaUsers },
 
   { name: 'Events', id: 'events', icon: FaCalendarAlt },
   {

@@ -15,7 +15,7 @@ const Hero = () => {
     subtitle: 'Centre for Advanced Legal Studies, Training and Research (CALSTAR) at MNLU Mumbai.',
     actions: [
       {
-        text: 'Submit to Blog',
+        text: 'Submit a Blog',
         onClick: () => navigate('/submissions'),
         variant: 'default',
         className: 'bg-primary hover:bg-primary/95 text-white font-medium px-8 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg'

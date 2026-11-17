@@ -8,16 +8,6 @@ const Faculty = memo(() => {
       name: 'Mr. Suraj Karande',
       image: '/images/faculty/1777.jpeg',
       title: 'Assistant Professor of Economics'
-    },
-    {
-      name: 'Ms. Aastha Tiwari',
-      image: '/images/faculty/1728539134550.jpeg',
-      title: 'Assistant Professor'
-    },
-    {
-      name: 'Ms. Shweta Bhuyan',
-      image: '/images/faculty/1740245639117.jpeg',
-      title: 'Research Assistant'
     }
   ]
 
@@ -29,49 +19,46 @@ const Faculty = memo(() => {
       role: "Assistant Professor of Economics",
       company: "Economics",
       image: "/images/faculty/1777.jpeg",
-    },
-    {
-      id: 2,
-      quote: "Under the distinguished guidance of Ms. Aastha Tiwari, CALSTAR contributes to the expanding field of legal scholarship and promotes socially relevant legal education.",
-      author: "Ms. Aastha Tiwari",
-      role: "Assistant Professor",
-      company: "AI and Tech Law",
-      image: "/images/faculty/1728539134550.jpeg",
-    },
-    {
-      id: 3,
-      quote: "Shweta Bhuyan brings a perfect blend of academic rigor and practical insights. Her mentorship has shaped countless successful legal careers.",
-      author: "Ms. Shweta Bhuyan",
-      role: "Research Assistant",
-      company: "",
-      image: "/images/faculty/1740245639117.jpeg",
-    },
+    }
   ]
 
   return (
-    <section className="section faculty" id="faculty">
+    <section className="section faculty" id="people">
+      <span id="faculty" style={{ display: 'block', position: 'relative', top: '-100px', visibility: 'hidden' }} />
       <div className="container">
-        <h2 className="section-title">Distinguished Faculty & Mentors</h2>
+        <h2 className="section-title">People</h2>
         <p className="section-subtitle">
-          Meet our dedicated team of educators guiding CALSTAR
+          Meet our dedicated faculty mentors and student leadership guiding CALSTAR
         </p>
 
-        <div className="faculty-grid">
-          {facultyMembers.map((faculty, index) => (
-            <div key={index} className="faculty-card">
-              <div className="faculty-image-wrapper">
-                <img
-                  src={faculty.image}
-                  alt={faculty.name}
-                  className="faculty-image"
-                  loading="lazy"
-                  decoding="async"
-                />
+        {/* Faculty Section */}
+        <div className="people-category">
+          <h3 className="people-category-title">Faculty</h3>
+          <div className="faculty-grid">
+            {facultyMembers.map((faculty, index) => (
+              <div key={index} className="faculty-card">
+                <div className="faculty-image-wrapper">
+                  <img
+                    src={faculty.image}
+                    alt={faculty.name}
+                    className="faculty-image"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <h3 className="faculty-name">{faculty.name}</h3>
+                {faculty.title && <p className="faculty-title">{faculty.title}</p>}
               </div>
-              <h3 className="faculty-name">{faculty.name}</h3>
-              {faculty.title && <p className="faculty-title">{faculty.title}</p>}
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+
+        {/* Office Bearers Section */}
+        <div className="people-category office-bearers-category">
+          <h3 className="people-category-title">Office Bearers</h3>
+          <div className="office-bearers-placeholder">
+            <p>Office bearers list and photographs will be updated soon.</p>
+          </div>
         </div>
 
         <EditorialTestimonial testimonials={testimonials} />
