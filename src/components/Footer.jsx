@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { FaLinkedin, FaYoutube, FaHeart } from 'react-icons/fa'
 import './Footer.css'
 
@@ -29,6 +30,7 @@ const Footer = () => {
               <li><a href="#events">Events</a></li>
               <li><a href="#blog">Blog</a></li>
               <li><a href="#contact">Contact</a></li>
+              <li><Link to="/admin">Admin Portal</Link></li>
             </ul>
           </div>
 

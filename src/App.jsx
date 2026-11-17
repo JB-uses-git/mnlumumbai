@@ -16,6 +16,9 @@ import BoardOfEditors from './components/BoardOfEditors'
 import AboutPage from './components/AboutPage'
 import BlogSubmissions from './components/BlogSubmissions'
 import NotFound from './components/NotFound'
+import AdminLogin from './components/admin/AdminLogin'
+import AdminDashboard from './components/admin/AdminDashboard'
+import ProtectedRoute from './components/admin/ProtectedRoute'
 import './App.css'
 
 // Main Page Component
@@ -47,6 +50,15 @@ function App() {
           <Route path="/submission-guidelines-journal" element={<SubmissionGuidelinesJournal />} />
           <Route path="/submission-guidelines-blog" element={<SubmissionGuidelinesBlog />} />
           <Route path="/board-of-editors" element={<BoardOfEditors />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <AdminDashboard />
+              </ProtectedRoute>
+            }
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
